@@ -1,0 +1,79 @@
+# depslib dependency file v1.0
+1625771184 source:c:\users\pabli\git\p2021c1\projects\parcial2\rtmuelles\funres.c
+	<stdio.h>
+	<string.h>
+	<time.h>
+	"listaSimple.h"
+	"funres.h"
+
+1625769963 c:\users\pabli\git\p2021c1\projects\parcial2\rtmuelles\listasimple.h
+
+1625763853 c:\users\pabli\git\p2021c1\projects\parcial2\rtmuelles\funres.h
+	"tipos.h"
+
+1625770278 c:\users\pabli\git\p2021c1\projects\parcial2\rtmuelles\tipos.h
+
+1625769998 source:c:\users\pabli\git\p2021c1\projects\parcial2\rtmuelles\listasimple.c
+	<stdlib.h>
+	<string.h>
+	"listaSimple.h"
+
+1625770534 source:c:\users\pabli\git\p2021c1\projects\parcial2\rtmuelles\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"tipos.h"
+	"funres.h"
+
+1626112104 source:c:\users\pabli\git\p2021c1\projects\parcial2\progra1110-entregable\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"tipos.h"
+	"funres.h"
+
+1625770278 c:\users\pabli\git\p2021c1\projects\parcial2\progra1110-entregable\tipos.h
+
+1626111579 c:\users\pabli\git\p2021c1\projects\parcial2\progra1110-entregable\funres.h
+	"tipos.h"
+
+1626110128 source:c:\users\pabli\git\p2021c1\projects\parcial2\progra1110-parcial2\listasimple.c
+	<stdlib.h>
+	<string.h>
+	"listaSimple.h"
+
+1626110048 c:\users\pabli\git\p2021c1\projects\parcial2\progra1110-parcial2\listasimple.h
+
+1626111031 source:c:\users\pabli\git\p2021c1\projects\parcial2\progra1110-entregable\funres.c
+
+1626304380 source:c:\users\kevin\desktop\robles_kevin_41261195\progra1110-parcial2-mv-tt\progra1110-entregablew64\ejercicioc\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"tipos.h"
+	"funres.h"
+	"miFuncion.h"
+
+1625770278 c:\users\kevin\desktop\robles_kevin_41261195\progra1110-parcial2-mv-tt\progra1110-entregablew64\ejercicioc\tipos.h
+
+1626111579 c:\users\kevin\desktop\robles_kevin_41261195\progra1110-parcial2-mv-tt\progra1110-entregablew64\ejercicioc\funres.h
+	"tipos.h"
+
+1626452575 c:\users\kevin\desktop\robles_kevin_41261195\progra1110-parcial2-mv-tt\progra1110-entregablew64\ejercicioc\mifuncion.h
+	"tipos.h"
+
+1626460146 source:c:\users\kevin\desktop\robles_kevin_41261195\progra1110-parcial2-mv-tt\progra1110-entregablew64\ejercicioc\lista.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"lista.h"
+
+1626452575 c:\users\kevin\desktop\robles_kevin_41261195\progra1110-parcial2-mv-tt\progra1110-entregablew64\ejercicioc\lista.h
+
+1626452729 source:c:\users\kevin\desktop\robles_kevin_41261195\progra1110-parcial2-mv-tt\progra1110-entregablew64\ejercicioc\mifuncion.c
+	<stdio.h>
+	<stdlib.h>
+	"miFuncion.h"
+	"tipos.h"
+	"lista.h"
+
