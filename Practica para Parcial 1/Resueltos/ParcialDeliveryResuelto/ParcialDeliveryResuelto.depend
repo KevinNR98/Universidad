@@ -1,0 +1,17 @@
+# depslib dependency file v1.0
+1636673747 source:e:\universidad\programacion\practica para parcial 1\2017-06-01_parcial_1\parcialdeliveryresuelto\main.c
+	<stdio.h>
+	<stdlib.h>
+
+1636678123 source:e:\universidad\programacion\practica para parcial 1\resueltos\parcialdeliveryresuelto\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<E:\Universidad\Programacion\Practica para Parcial 1\Resueltos\ParcialDeliveryResuelto\deliveryResuelto.h>
+	<E:\Universidad\Programacion\Practica para Parcial 1\Resueltos\ParcialDeliveryResuelto\TiposDelivery.h>
+	<E:\Universidad\Programacion\Practica para Parcial 1\Resueltos\ParcialDeliveryResuelto\TipoTDA.h>
+	<E:\Universidad\Programacion\Practica para Parcial 1\Resueltos\ParcialDeliveryResuelto\Cola.h>
+
+1636678037 source:e:\universidad\programacion\practica para parcial 1\resueltos\parcialdeliveryresuelto\cola.c
+	<E:\Universidad\Programacion\Practica para Parcial 1\Resueltos\ParcialDeliveryResuelto\Cola.h>
+

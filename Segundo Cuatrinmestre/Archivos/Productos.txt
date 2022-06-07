@@ -1,0 +1,9 @@
+banana         Banana                                            05/10/20210160.00300
+kiwi           Kiwi                                              01/01/20210200.00030
+mango          Mango                                             02/02/20210105.00080
+manz           Manzana                                           09/09/20210080.00300
+naran          Naranja                                           07/07/20210055.00210
+pera           Pera                                              07/04/20210060.00100
+pome           Pomelo                                            08/05/20210140.00020
+sandia         Sandia                                            08/08/20210100.00080
+uva            Uva                                               01/01/20210130.00089

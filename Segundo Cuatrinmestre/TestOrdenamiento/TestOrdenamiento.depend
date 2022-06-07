@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1651589974 source:e:\universidad\programacion\segundo cuatrinmestre\testordenamiento\main.c
+	<stdio.h>
+	<string.h>
+	<stdlib.h>
+	"../OrdenamientoGenerico/OrdenamientoGenerico.h"
+
+1651586775 e:\universidad\programacion\segundo cuatrinmestre\ordenamientogenerico\ordenamientogenerico.h
+

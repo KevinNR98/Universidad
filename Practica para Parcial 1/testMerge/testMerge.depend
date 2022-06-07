@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1654539894 source:e:\universidad\programacion\practica para parcial 1\testmerge\main.c
+	<stdio.h>
+	<stdlib.h>
+
+1654539746 source:e:\universidad\programacion\practica para parcial 1\testmerge\merge.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"merge.h"
+
+1654539717 e:\universidad\programacion\practica para parcial 1\testmerge\merge.h
+

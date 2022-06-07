@@ -1,0 +1,10 @@
+#ifndef TDAPILAIMPDINAMICA_H_INCLUDED
+#define TDAPILAIMPDINAMICA_H_INCLUDED
+
+#include "../Nodo/Nodo.h"
+
+typedef Nodo* Pila;
+
+
+
+#endif // TDAPILAIMPDINAMICA_H_INCLUDED

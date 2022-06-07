@@ -1,0 +1,14 @@
+# depslib dependency file v1.0
+1654604095 source:e:\universidad\programacion\practica para parcial 1\hora\src\hora.cpp
+	"Hora.h"
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+
+1654603773 e:\universidad\programacion\practica para parcial 1\hora\include\hora.h
+	<iostream>
+
+1654601094 source:e:\universidad\programacion\practica para parcial 1\hora\main.cpp
+	<iostream>
+	"Hora.h"
+

@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1633479968 source:e:\universidad\programacion\segundo cuatrinmestre\archivos\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"../Comun/Comun.h"
+	"../Fecha/Fecha.h"
+
+1630451972 e:\universidad\programacion\segundo cuatrinmestre\comun\comun.h
+
+1633476780 e:\universidad\programacion\segundo cuatrinmestre\fecha\fecha.h
+

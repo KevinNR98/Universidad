@@ -1,0 +1,16 @@
+# depslib dependency file v1.0
+1634690153 source:e:\universidad\programacion\segundo cuatrinmestre\tdapilaimpestatica\tdapilaimplestatica.c
+	<memory.h>
+	"../TDAPila/TDAPila.h"
+
+1634693425 e:\universidad\programacion\segundo cuatrinmestre\tdapila\tdapila.h
+	<stddef.h>
+	"../Comun/Comun.h"
+	"../TDAPilaImpEstatica/TDAPilaImplEstatica.h"
+	"TDAPilaImplDinamica.h"
+
+1634688282 e:\universidad\programacion\segundo cuatrinmestre\comun\comun.h
+
+1634690136 e:\universidad\programacion\segundo cuatrinmestre\tdapilaimpestatica\tdapilaimplestatica.h
+	"../TDAPila/TDAPila.h"
+

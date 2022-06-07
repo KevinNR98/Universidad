@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1649164680 source:e:\universidad\programacion\segundo cuatrinmestre\testfecha\main.c
+	<stdio.h>
+	<stdlib.h>
+	"../Fecha/Fecha.h"
+
+1649163672 e:\universidad\programacion\segundo cuatrinmestre\fecha\fecha.h
+

@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1631928915 source:e:\universidad\programacion\segundo cuatrinmestre\cadena\cadena.c
+	"Cadena.h"
+	<string.h>
+
+1631928915 e:\universidad\programacion\segundo cuatrinmestre\cadena\cadena.h
+	<ctype.h>
+	"../Comun/Comun.h"
+
+1630451972 e:\universidad\programacion\segundo cuatrinmestre\comun\comun.h
+

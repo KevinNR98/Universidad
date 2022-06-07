@@ -1,0 +1,8 @@
+#ifndef TDALISTAIMPLDINAMICA_H_INCLUDED
+#define TDALISTAIMPLDINAMICA_H_INCLUDED
+
+#include "../Nodo/Nodo.h"
+
+typedef Nodo* Lista;
+
+#endif // TDALISTAIMPLDINAMICA_H_INCLUDED

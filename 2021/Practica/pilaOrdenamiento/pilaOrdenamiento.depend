@@ -1,0 +1,14 @@
+# depslib dependency file v1.0
+1623413200 source:e:\universidad\programacion\semana 6\practica\pilaordenamiento\main.c
+	<stdio.h>
+	<stdlib.h>
+	"E:\Universidad\Programacion\Librerias\Dinamica\pila\pila\pila.c"
+
+1622760495 e:\universidad\programacion\librerias\dinamica\pila\pila\pila.h
+
+1622760988 e:\universidad\programacion\librerias\dinamica\pila\pila\pila.c
+	<stdlib.h>
+	<stdio.h>
+	<string.h>
+	"pila.h"
+

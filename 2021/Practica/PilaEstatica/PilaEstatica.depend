@@ -1,0 +1,14 @@
+# depslib dependency file v1.0
+1621904627 source:e:\universidad\programacion\semana 6\practica\pilaestatica\main.c
+	<stdio.h>
+	<stdlib.h>
+	"Estatica.h"
+
+1622233698 e:\universidad\programacion\semana 6\practica\pilaestatica\estatica.h
+
+1622235553 source:e:\universidad\programacion\semana 6\practica\pilaestatica\estatica.c
+	"Estatica.h"
+	<stdlib.h>
+	<stdio.h>
+	<string.h>
+

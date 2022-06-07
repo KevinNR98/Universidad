@@ -1,0 +1,23 @@
+# depslib dependency file v1.0
+1634948047 source:e:\universidad\programacion\segundo cuatrinmestre\sumarmuchascifras\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"../TDAPila/TDAPila.h"
+
+1634948047 e:\universidad\programacion\segundo cuatrinmestre\tdapila\tdapila.h
+	<stddef.h>
+	"../Comun/Comun.h"
+	"../TDAPilaImpEstatica/TDAPilaImplEstatica.h"
+	"../TDAPilaImpDinamica/TDAPilaImpDinamica.h"
+
+1634688282 e:\universidad\programacion\segundo cuatrinmestre\comun\comun.h
+
+1634690136 e:\universidad\programacion\segundo cuatrinmestre\tdapilaimpestatica\tdapilaimplestatica.h
+	"../TDAPila/TDAPila.h"
+
+1634947850 e:\universidad\programacion\segundo cuatrinmestre\tdapilaimpdinamica\tdapilaimpdinamica.h
+	"../Nodo/Nodo.h"
+
+1634947745 e:\universidad\programacion\segundo cuatrinmestre\nodo\nodo.h
+

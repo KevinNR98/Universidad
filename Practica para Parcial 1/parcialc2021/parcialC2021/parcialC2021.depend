@@ -1,0 +1,23 @@
+# depslib dependency file v1.0
+1623372439 source:e:\universidad\programacion\descargas\nueva carpeta\parcialc2021\parcialc2021\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"funciones.h"
+
+1623366834 e:\universidad\programacion\descargas\nueva carpeta\parcialc2021\parcialc2021\funciones.h
+
+1623433622 source:e:\universidad\programacion\descargas\nueva carpeta\parcialc2021\parcialc2021\que_hice.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"funciones.h"
+
+1623433622 source:e:\universidad\programacion\practica para parcial 1\parcialc2021\parcialc2021\que_hice.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"funciones.h"
+
+1623366834 e:\universidad\programacion\practica para parcial 1\parcialc2021\parcialc2021\funciones.h
+

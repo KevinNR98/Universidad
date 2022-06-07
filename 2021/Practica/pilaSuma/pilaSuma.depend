@@ -1,0 +1,23 @@
+# depslib dependency file v1.0
+1622485658 source:e:\universidad\programacion\librerias\dinamica\pila\pila.c
+	<stdlib.h>
+	<stdio.h>
+	<string.h>
+	"Pila.h"
+
+1622485636 e:\universidad\programacion\librerias\dinamica\pila\pila.h
+
+1622661595 source:e:\universidad\programacion\semana 6\practica\pilasuma\funciones.c
+	<stdlib.h>
+	<stdio.h>
+	<string.h>
+	"Funciones.h"
+
+1622661595 e:\universidad\programacion\semana 6\practica\pilasuma\funciones.h
+
+1622736919 source:e:\universidad\programacion\semana 6\practica\pilasuma\main.c
+	<stdio.h>
+	<string.h>
+	<stdlib.h>
+	"Funciones.h"
+

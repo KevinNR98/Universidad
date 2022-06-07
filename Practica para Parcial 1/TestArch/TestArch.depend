@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1654528685 source:e:\universidad\programacion\practica para parcial 1\testarch\main.c
+	<stdio.h>
+	<stdlib.h>
+	"arch.h"
+
+1654528680 source:e:\universidad\programacion\practica para parcial 1\testarch\arch.c
+	<stdio.h>
+	<stdlib.h>
+	"arch.h"
+
+1654528398 e:\universidad\programacion\practica para parcial 1\testarch\arch.h
+

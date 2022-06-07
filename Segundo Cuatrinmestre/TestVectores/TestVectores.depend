@@ -1,0 +1,15 @@
+# depslib dependency file v1.0
+1651517804 source:e:\universidad\programacion\segundo cuatrinmestre\testvectores\main.c
+	<stdio.h>
+	<stdlib.h>
+	"../vectores/vectores.h"
+
+1651517104 e:\universidad\programacion\segundo cuatrinmestre\vectores\vectores.h
+	"../Comun/Comun.h"
+	"../Fecha/Fecha.h"
+
+1636765094 e:\universidad\programacion\segundo cuatrinmestre\comun\comun.h
+
+1651517023 e:\universidad\programacion\segundo cuatrinmestre\fecha\fecha.h
+	"../Comun/Comun.h"
+

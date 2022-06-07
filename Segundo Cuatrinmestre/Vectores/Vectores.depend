@@ -1,0 +1,10 @@
+# depslib dependency file v1.0
+1630709850 source:e:\universidad\programacion\segundo cuatrinmestre\vectores\vectores.c
+	<stdio.h>
+	"Vectores.h"
+
+1630458907 e:\universidad\programacion\segundo cuatrinmestre\vectores\vectores.h
+	"../Comun/Comun.h"
+
+1630451972 e:\universidad\programacion\segundo cuatrinmestre\comun\comun.h
+

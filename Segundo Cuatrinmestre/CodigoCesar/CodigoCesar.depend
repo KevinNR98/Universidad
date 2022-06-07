@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1635873971 source:e:\universidad\programacion\segundo cuatrinmestre\codigocesar\main.c
+	<stdio.h>
+	<ctype.h>
+	<string.h>
+

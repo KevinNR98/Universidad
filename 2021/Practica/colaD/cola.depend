@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1584205420 source:e:\universidad\programacion\semana 6\practica\colad\main.c
+	<stdio.h>
+	<stdlib.h>
+
+1622838173 source:e:\universidad\programacion\semana 6\practica\colad\cola.c
+	"cola.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1622838173 e:\universidad\programacion\semana 6\practica\colad\cola.h
+

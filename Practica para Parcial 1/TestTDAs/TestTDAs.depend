@@ -1,0 +1,14 @@
+# depslib dependency file v1.0
+1654625869 source:e:\universidad\programacion\practica para parcial 1\testtdas\main.c
+	<stdio.h>
+	<stdlib.h>
+	"tda.h"
+
+1654625353 source:e:\universidad\programacion\practica para parcial 1\testtdas\tda.c
+	<stdio.h>
+	<stdlib.h>
+	"tda.h"
+	<memory.h>
+
+1654624873 e:\universidad\programacion\practica para parcial 1\testtdas\tda.h
+
