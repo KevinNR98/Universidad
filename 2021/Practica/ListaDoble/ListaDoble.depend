@@ -1,0 +1,14 @@
+# depslib dependency file v1.0
+1626112161 source:e:\universidad\programacion\semana 10\practica\listadoble\main.c
+	<stdio.h>
+	<stdlib.h>
+	"ListaDoble.h"
+
+1624559004 e:\universidad\programacion\semana 10\practica\listadoble\listadoble.h
+
+1626114745 source:e:\universidad\programacion\semana 10\practica\listadoble\listadoble.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"ListaDoble.h"
+
