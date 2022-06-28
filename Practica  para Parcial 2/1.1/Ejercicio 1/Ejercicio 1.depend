@@ -1,0 +1,30 @@
+# depslib dependency file v1.0
+1626049598 source:e:\universidad\programacion\practica  para parcial 2\1.1\ejercicio 1\funciones.c
+	<stdio.h>
+	"Funciones.h"
+	"Arbol.h"
+
+1626048335 source:e:\universidad\programacion\practica  para parcial 2\1.1\ejercicio 1\main.c
+	<stdio.h>
+	<stdlib.h>
+	"Funciones.h"
+	"Menu.h"
+
+1626049598 e:\universidad\programacion\practica  para parcial 2\1.1\ejercicio 1\funciones.h
+	"Arbol.h"
+
+1626048352 source:e:\universidad\programacion\practica  para parcial 2\1.1\ejercicio 1\arbol.c
+	<stdio.h>
+	<string.h>
+	"Arbol.h"
+
+1626034910 source:e:\universidad\programacion\practica  para parcial 2\1.1\ejercicio 1\menu.c
+	<stdio.h>
+	<string.h>
+	<ctype.h>
+	"menu.h"
+
+1626034910 e:\universidad\programacion\practica  para parcial 2\1.1\ejercicio 1\menu.h
+
+1626043410 e:\universidad\programacion\practica  para parcial 2\1.1\ejercicio 1\arbol.h
+

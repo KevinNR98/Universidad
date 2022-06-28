@@ -1,0 +1,33 @@
+# depslib dependency file v1.0
+1626033445 source:e:\universidad\programacion\practica  para parcial 2\1\ejer1parcialc\funciones.c
+	<stdio.h>
+	<stdlib.h>
+	"funciones.h"
+	"arbol.h"
+
+1625692924 source:e:\universidad\programacion\practica  para parcial 2\1\ejer1parcialc\menu.c
+	<stdio.h>
+	<string.h>
+	<ctype.h>
+	"menu.h"
+
+1625696386 e:\universidad\programacion\practica  para parcial 2\1\ejer1parcialc\menu.h
+
+1626034424 source:e:\universidad\programacion\practica  para parcial 2\1\ejer1parcialc\main.c
+	<stdio.h>
+	<stdlib.h>
+	"funciones.h"
+	"menu.h"
+
+1626034661 e:\universidad\programacion\practica  para parcial 2\1\ejer1parcialc\funciones.h
+	"arbol.h"
+
+1625751865 source:e:\universidad\programacion\practica  para parcial 2\1\ejer1parcialc\arbol.c
+	<stdio.h>
+	<stdlib.h>
+	"funciones.h"
+	"arbol.h"
+
+1625709860 e:\universidad\programacion\practica  para parcial 2\1\ejer1parcialc\arbol.h
+	"funciones.h"
+

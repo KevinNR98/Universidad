@@ -1,0 +1,36 @@
+# depslib dependency file v1.0
+1626118853 source:e:\universidad\programacion\practica  para parcial 2\2021_07_12_2doparcial\mio_practica\arbol.c
+	<stdio.h>
+	<string.h>
+	<stdlib.h>
+	"Arbol.h"
+
+1626118788 e:\universidad\programacion\practica  para parcial 2\2021_07_12_2doparcial\mio_practica\arbol.h
+
+1626175999 source:e:\universidad\programacion\practica  para parcial 2\2021_07_12_2doparcial\mio_practica\listadoble.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"ListaDoble.h"
+	"Funciones.h"
+
+1626124542 e:\universidad\programacion\practica  para parcial 2\2021_07_12_2doparcial\mio_practica\listadoble.h
+
+1626178471 source:e:\universidad\programacion\practica  para parcial 2\2021_07_12_2doparcial\mio_practica\funciones.c
+	<stdio.h>
+	<stdlib.h>
+	"Funciones.h"
+	"Arbol.h"
+	"ListaDoble.h"
+
+1626128548 e:\universidad\programacion\practica  para parcial 2\2021_07_12_2doparcial\mio_practica\funciones.h
+	"Arbol.h"
+	"ListaDoble.h"
+
+1626178568 source:e:\universidad\programacion\practica  para parcial 2\2021_07_12_2doparcial\mio_practica\main.c
+	<stdio.h>
+	<stdlib.h>
+	"Funciones.h"
+	"Arbol.h"
+	"ListaDoble.h"
+

@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1626137642 source:e:\universidad\programacion\practica  para parcial 2\2021_07_12_2doparcial\2021_07_12_2doparcial\2021_07_12_2doparcial_entregable_64bits\puntosyrectascpp\src\punto.cpp
+	"Punto.h"
+
+1626140097 e:\universidad\programacion\practica  para parcial 2\2021_07_12_2doparcial\2021_07_12_2doparcial\2021_07_12_2doparcial_entregable_64bits\puntosyrectascpp\include\punto.h
+
+1626137914 source:e:\universidad\programacion\practica  para parcial 2\2021_07_12_2doparcial\2021_07_12_2doparcial\2021_07_12_2doparcial_entregable_64bits\puntosyrectascpp\src\recta.cpp
+	"Recta.h"
+	"Punto.h"
+
+1626138693 e:\universidad\programacion\practica  para parcial 2\2021_07_12_2doparcial\2021_07_12_2doparcial\2021_07_12_2doparcial_entregable_64bits\puntosyrectascpp\include\recta.h
+	"Punto.h"
+

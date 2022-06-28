@@ -1,0 +1,117 @@
+# depslib dependency file v1.0
+1626117885 source:c:\users\cb\desktop\2021_07_12_2doparcial_entregable_64bits\2doparcialarmadopc\main.c
+	<locale.h>
+	<windows.h>
+	<stdio.h>
+	<stdlib.h>
+	"../Solucion2doParcialArmadoPC/Solucion2doParcialArmadoPC.h"
+	"../TDAArbolImplDinamica/TDAArbolImplDinamica.h"
+	"../TDAArbol/TDAArbol.h"
+	"../TDAListaImplDinamicaDoble/TDAListaImplDinamicaDoble.h"
+	"../TDALista/TDALista.h"
+	"../TDA/TDA.h"
+	"../Solucion2doParcialArmadoPC/TiposArmadoPC.h"
+
+1625967549 c:\users\cb\desktop\2021_07_12_2doparcial_entregable_64bits\solucion2doparcialarmadopc\solucion2doparcialarmadopc.h
+	"../TDAListaImplDinamicaDoble/TDAListaImplDinamicaDoble.h"
+	"../TDAArbolImplDinamica/TDAArbolImplDinamica.h"
+
+1623682906 c:\users\cb\desktop\2021_07_12_2doparcial_entregable_64bits\tdalistaimpldinamicadoble\tdalistaimpldinamicadoble.h
+	"../Nodo/NodoD.h"
+
+1623682882 c:\users\cb\desktop\2021_07_12_2doparcial_entregable_64bits\nodo\nodod.h
+	<stddef.h>
+
+1624891480 c:\users\cb\desktop\2021_07_12_2doparcial_entregable_64bits\tdaarbolimpldinamica\tdaarbolimpldinamica.h
+	"../Nodo/NodoA.h"
+
+1625872472 c:\users\cb\desktop\2021_07_12_2doparcial_entregable_64bits\nodo\nodoa.h
+	<stddef.h>
+
+1625944557 c:\users\cb\desktop\2021_07_12_2doparcial_entregable_64bits\tdaarbol\tdaarbol.h
+	"../TDA/TDA.h"
+
+1625502226 c:\users\cb\desktop\2021_07_12_2doparcial_entregable_64bits\tda\tda.h
+
+1625870811 c:\users\cb\desktop\2021_07_12_2doparcial_entregable_64bits\solucion2doparcialarmadopc\tiposarmadopc.h
+
+1625956800 c:\users\cb\desktop\2021_07_12_2doparcial_entregable_64bits\tdalista\tdalista.h
+
+1637180453 source:c:\users\damia\onedrive\desktop\prog_c1_parcial_2_entregable_64b\2021_07_12_2doparcial_entregable_64bits\2021_07_12_2doparcial_entregable_64bits\2doparcialarmadopc\main.c
+	<locale.h>
+	<windows.h>
+	<stdio.h>
+	<stdlib.h>
+	"../Solucion2doParcialArmadoPC/Solucion2doParcialArmadoPC.h"
+	"../TDAArbolImplDinamica/TDAArbolImplDinamica.h"
+	"../TDAArbol/TDAArbol.h"
+	"../TDAListaImplDinamicaDoble/TDAListaImplDinamicaDoble.h"
+	"../TDALista/TDALista.h"
+	"../TDA/TDA.h"
+	"../Solucion2doParcialArmadoPC/TiposArmadoPC.h"
+
+1625967549 c:\users\damia\onedrive\desktop\prog_c1_parcial_2_entregable_64b\2021_07_12_2doparcial_entregable_64bits\2021_07_12_2doparcial_entregable_64bits\solucion2doparcialarmadopc\solucion2doparcialarmadopc.h
+	"../TDAListaImplDinamicaDoble/TDAListaImplDinamicaDoble.h"
+	"../TDAArbolImplDinamica/TDAArbolImplDinamica.h"
+
+1623682906 c:\users\damia\onedrive\desktop\prog_c1_parcial_2_entregable_64b\2021_07_12_2doparcial_entregable_64bits\2021_07_12_2doparcial_entregable_64bits\tdalistaimpldinamicadoble\tdalistaimpldinamicadoble.h
+	"../Nodo/NodoD.h"
+
+1623682882 c:\users\damia\onedrive\desktop\prog_c1_parcial_2_entregable_64b\2021_07_12_2doparcial_entregable_64bits\2021_07_12_2doparcial_entregable_64bits\nodo\nodod.h
+	<stddef.h>
+
+1624891480 c:\users\damia\onedrive\desktop\prog_c1_parcial_2_entregable_64b\2021_07_12_2doparcial_entregable_64bits\2021_07_12_2doparcial_entregable_64bits\tdaarbolimpldinamica\tdaarbolimpldinamica.h
+	"../Nodo/NodoA.h"
+
+1625872472 c:\users\damia\onedrive\desktop\prog_c1_parcial_2_entregable_64b\2021_07_12_2doparcial_entregable_64bits\2021_07_12_2doparcial_entregable_64bits\nodo\nodoa.h
+	<stddef.h>
+
+1625944557 c:\users\damia\onedrive\desktop\prog_c1_parcial_2_entregable_64b\2021_07_12_2doparcial_entregable_64bits\2021_07_12_2doparcial_entregable_64bits\tdaarbol\tdaarbol.h
+	"../TDA/TDA.h"
+
+1625502226 c:\users\damia\onedrive\desktop\prog_c1_parcial_2_entregable_64b\2021_07_12_2doparcial_entregable_64bits\2021_07_12_2doparcial_entregable_64bits\tda\tda.h
+
+1625956800 c:\users\damia\onedrive\desktop\prog_c1_parcial_2_entregable_64b\2021_07_12_2doparcial_entregable_64bits\2021_07_12_2doparcial_entregable_64bits\tdalista\tdalista.h
+
+1625870811 c:\users\damia\onedrive\desktop\prog_c1_parcial_2_entregable_64b\2021_07_12_2doparcial_entregable_64bits\2021_07_12_2doparcial_entregable_64bits\solucion2doparcialarmadopc\tiposarmadopc.h
+
+1656422691 source:e:\universidad\programacion\practica  para parcial 2\2021_07_12_2doparcial_entregable_64bits\2021_07_12_2doparcial_entregable_64bits\2doparcialarmadopc\main.c
+	<locale.h>
+	<windows.h>
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<math.h>
+	"../Solucion2doParcialArmadoPC/Solucion2doParcialArmadoPC.h"
+	"../TDAArbolImplDinamica/TDAArbolImplDinamica.h"
+	"../TDAArbol/TDAArbol.h"
+	"../TDAListaImplDinamicaDoble/TDAListaImplDinamicaDoble.h"
+	"../TDALista/TDALista.h"
+	"../TDA/TDA.h"
+	"../Solucion2doParcialArmadoPC/TiposArmadoPC.h"
+
+1625967549 e:\universidad\programacion\practica  para parcial 2\2021_07_12_2doparcial_entregable_64bits\2021_07_12_2doparcial_entregable_64bits\solucion2doparcialarmadopc\solucion2doparcialarmadopc.h
+	"../TDAListaImplDinamicaDoble/TDAListaImplDinamicaDoble.h"
+	"../TDAArbolImplDinamica/TDAArbolImplDinamica.h"
+
+1655947642 e:\universidad\programacion\practica  para parcial 2\2021_07_12_2doparcial_entregable_64bits\2021_07_12_2doparcial_entregable_64bits\tdalistaimpldinamicadoble\tdalistaimpldinamicadoble.h
+	"../Nodo/NodoD.h"
+
+1623682882 e:\universidad\programacion\practica  para parcial 2\2021_07_12_2doparcial_entregable_64bits\2021_07_12_2doparcial_entregable_64bits\nodo\nodod.h
+	<stddef.h>
+
+1624891480 e:\universidad\programacion\practica  para parcial 2\2021_07_12_2doparcial_entregable_64bits\2021_07_12_2doparcial_entregable_64bits\tdaarbolimpldinamica\tdaarbolimpldinamica.h
+	"../Nodo/NodoA.h"
+
+1625872472 e:\universidad\programacion\practica  para parcial 2\2021_07_12_2doparcial_entregable_64bits\2021_07_12_2doparcial_entregable_64bits\nodo\nodoa.h
+	<stddef.h>
+
+1625944557 e:\universidad\programacion\practica  para parcial 2\2021_07_12_2doparcial_entregable_64bits\2021_07_12_2doparcial_entregable_64bits\tdaarbol\tdaarbol.h
+	"../TDA/TDA.h"
+
+1625502226 e:\universidad\programacion\practica  para parcial 2\2021_07_12_2doparcial_entregable_64bits\2021_07_12_2doparcial_entregable_64bits\tda\tda.h
+
+1625956800 e:\universidad\programacion\practica  para parcial 2\2021_07_12_2doparcial_entregable_64bits\2021_07_12_2doparcial_entregable_64bits\tdalista\tdalista.h
+
+1625870811 e:\universidad\programacion\practica  para parcial 2\2021_07_12_2doparcial_entregable_64bits\2021_07_12_2doparcial_entregable_64bits\solucion2doparcialarmadopc\tiposarmadopc.h
+

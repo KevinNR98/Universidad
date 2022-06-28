@@ -1,0 +1,29 @@
+# depslib dependency file v1.0
+1625588148 source:e:\universidad\programacion\semana 10\practica\arbolbinario\main.c
+	<stdio.h>
+	<stdlib.h>
+	"ArbolBinario.h"
+	"utils/utils.h"
+
+1625519324 e:\universidad\programacion\semana 10\practica\arbolbinario\arbolbinario.h
+
+1625524610 source:e:\universidad\programacion\semana 10\practica\arbolbinario\arbolbinario.c
+	<stdio.h>
+	<string.h>
+	<stdlib.h>
+	"ArbolBinario.h"
+
+1625497873 source:c:\users\kevin\downloads\onedrive_1_2-7-2021\utils.c
+	<stdio.h>
+	"utils.h"
+
+1625270040 c:\users\kevin\downloads\onedrive_1_2-7-2021\utils.h
+	<stdlib.h>
+
+1625532018 source:e:\universidad\programacion\semana 10\practica\arbolbinario\utils\utils.c
+	<stdio.h>
+	"utils.h"
+
+1625513013 e:\universidad\programacion\semana 10\practica\arbolbinario\utils\utils.h
+	<stdlib.h>
+

@@ -1,0 +1,88 @@
+# depslib dependency file v1.0
+1626029881 source:e:\universidad\programacion\descargas\nueva carpeta\eas 1c 2020-20210527t203834z-001\eas 1c 2020\ea3-entregable1\ea3-entregable\ea3-poo_cpp_figura\cuadrado.cpp
+	<math.h>
+	"Cuadrado.h"
+	"Figura.h"
+	"FiguraInvalidaException.h"
+
+1626020650 e:\universidad\programacion\descargas\nueva carpeta\eas 1c 2020-20210527t203834z-001\eas 1c 2020\ea3-entregable1\ea3-entregable\ea3-poo_cpp_figura\cuadrado.h
+	"Figura.h"
+
+1594076540 source:e:\universidad\programacion\descargas\nueva carpeta\eas 1c 2020-20210527t203834z-001\eas 1c 2020\ea3-entregable1\ea3-entregable\ea3-poo_cpp_figura\figura.cpp
+	"Figura.h"
+
+1626020650 e:\universidad\programacion\descargas\nueva carpeta\eas 1c 2020-20210527t203834z-001\eas 1c 2020\ea3-entregable1\ea3-entregable\ea3-poo_cpp_figura\figura.h
+	"FiguraInvalidaException.h"
+
+1626029881 e:\universidad\programacion\descargas\nueva carpeta\eas 1c 2020-20210527t203834z-001\eas 1c 2020\ea3-entregable1\ea3-entregable\ea3-poo_cpp_figura\figurainvalidaexception.h
+	<string>
+	"Figura.h"
+
+1626021012 source:e:\universidad\programacion\descargas\nueva carpeta\eas 1c 2020-20210527t203834z-001\eas 1c 2020\ea3-entregable1\ea3-entregable\ea3-poo_cpp_figura\rectangulo.cpp
+	"Rectangulo.h"
+	"Figura.h"
+
+1626021006 e:\universidad\programacion\descargas\nueva carpeta\eas 1c 2020-20210527t203834z-001\eas 1c 2020\ea3-entregable1\ea3-entregable\ea3-poo_cpp_figura\rectangulo.h
+	"Figura.h"
+
+1626029881 source:e:\universidad\programacion\descargas\nueva carpeta\eas 1c 2020-20210527t203834z-001\eas 1c 2020\ea3-entregable1\ea3-entregable\ea3-poo_cpp_figura\triangulo.cpp
+	"Triangulo.h"
+	"Figura.h"
+	"FiguraInvalidaException.h"
+
+1626021088 e:\universidad\programacion\descargas\nueva carpeta\eas 1c 2020-20210527t203834z-001\eas 1c 2020\ea3-entregable1\ea3-entregable\ea3-poo_cpp_figura\triangulo.h
+	"Figura.h"
+
+1626028470 source:e:\universidad\programacion\descargas\nueva carpeta\eas 1c 2020-20210527t203834z-001\eas 1c 2020\ea3-entregable1\ea3-entregable\ea3-poo_cpp_figura\main.cpp
+	<iostream>
+	"Figura.h"
+	"Cuadrado.h"
+	"Rectangulo.h"
+	"Triangulo.h"
+	"FiguraInvalidaException.h"
+
+1626029881 source:e:\universidad\programacion\practica  para parcial 2\c++\ea3-poo_cpp_figura\cuadrado.cpp
+	<math.h>
+	"Cuadrado.h"
+	"Figura.h"
+	"FiguraInvalidaException.h"
+
+1626020650 e:\universidad\programacion\practica  para parcial 2\c++\ea3-poo_cpp_figura\cuadrado.h
+	"Figura.h"
+
+1626020650 e:\universidad\programacion\practica  para parcial 2\c++\ea3-poo_cpp_figura\figura.h
+	"FiguraInvalidaException.h"
+
+1626029881 e:\universidad\programacion\practica  para parcial 2\c++\ea3-poo_cpp_figura\figurainvalidaexception.h
+	<string>
+	"Figura.h"
+
+1594076540 source:e:\universidad\programacion\practica  para parcial 2\c++\ea3-poo_cpp_figura\figura.cpp
+	"Figura.h"
+
+1626029916 source:e:\universidad\programacion\practica  para parcial 2\c++\ea3-poo_cpp_figura\figurainvaldiaexception.cpp
+	"FiguraInvalidaException.h"
+
+1626028470 source:e:\universidad\programacion\practica  para parcial 2\c++\ea3-poo_cpp_figura\main.cpp
+	<iostream>
+	"Figura.h"
+	"Cuadrado.h"
+	"Rectangulo.h"
+	"Triangulo.h"
+	"FiguraInvalidaException.h"
+
+1626021006 e:\universidad\programacion\practica  para parcial 2\c++\ea3-poo_cpp_figura\rectangulo.h
+	"Figura.h"
+
+1626021088 e:\universidad\programacion\practica  para parcial 2\c++\ea3-poo_cpp_figura\triangulo.h
+	"Figura.h"
+
+1626021012 source:e:\universidad\programacion\practica  para parcial 2\c++\ea3-poo_cpp_figura\rectangulo.cpp
+	"Rectangulo.h"
+	"Figura.h"
+
+1626029881 source:e:\universidad\programacion\practica  para parcial 2\c++\ea3-poo_cpp_figura\triangulo.cpp
+	"Triangulo.h"
+	"Figura.h"
+	"FiguraInvalidaException.h"
+

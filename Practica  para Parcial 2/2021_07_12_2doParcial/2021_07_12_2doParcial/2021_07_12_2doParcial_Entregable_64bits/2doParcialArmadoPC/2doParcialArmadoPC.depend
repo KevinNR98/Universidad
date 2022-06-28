@@ -1,0 +1,37 @@
+# depslib dependency file v1.0
+1626122419 source:e:\universidad\programacion\practica  para parcial 2\2021_07_12_2doparcial\2021_07_12_2doparcial\2021_07_12_2doparcial_entregable_64bits\2doparcialarmadopc\main.c
+	<locale.h>
+	<windows.h>
+	<stdio.h>
+	<stdlib.h>
+	"../TDAArbolImplDinamica/TDAArbolImplDinamica.h"
+	"../TDAListaImplDinamicaDoble/TDAListaImplDinamicaDoble.h"
+	"../TDAArbol/TDAArbol.h"
+	"../TDAArbolImplDinamica/TDAArbolImplDinamica.h"
+	"../Solucion2doParcialArmadoPC/Solucion2doParcialArmadoPC.h"
+	"../Solucion2doParcialArmadoPC/TiposArmadoPC.h"
+	"../TDA/TDA.h"
+
+1625967549 e:\universidad\programacion\practica  para parcial 2\2021_07_12_2doparcial\2021_07_12_2doparcial\2021_07_12_2doparcial_entregable_64bits\solucion2doparcialarmadopc\solucion2doparcialarmadopc.h
+	"../TDAListaImplDinamicaDoble/TDAListaImplDinamicaDoble.h"
+	"../TDAArbolImplDinamica/TDAArbolImplDinamica.h"
+
+1623682906 e:\universidad\programacion\practica  para parcial 2\2021_07_12_2doparcial\2021_07_12_2doparcial\2021_07_12_2doparcial_entregable_64bits\tdalistaimpldinamicadoble\tdalistaimpldinamicadoble.h
+	"../Nodo/NodoD.h"
+
+1623682882 e:\universidad\programacion\practica  para parcial 2\2021_07_12_2doparcial\2021_07_12_2doparcial\2021_07_12_2doparcial_entregable_64bits\nodo\nodod.h
+	<stddef.h>
+
+1624891480 e:\universidad\programacion\practica  para parcial 2\2021_07_12_2doparcial\2021_07_12_2doparcial\2021_07_12_2doparcial_entregable_64bits\tdaarbolimpldinamica\tdaarbolimpldinamica.h
+	"../Nodo/NodoA.h"
+
+1625872472 e:\universidad\programacion\practica  para parcial 2\2021_07_12_2doparcial\2021_07_12_2doparcial\2021_07_12_2doparcial_entregable_64bits\nodo\nodoa.h
+	<stddef.h>
+
+1626117932 e:\universidad\programacion\practica  para parcial 2\2021_07_12_2doparcial\2021_07_12_2doparcial\2021_07_12_2doparcial_entregable_64bits\solucion2doparcialarmadopc\tiposarmadopc.h
+
+1625944557 e:\universidad\programacion\practica  para parcial 2\2021_07_12_2doparcial\2021_07_12_2doparcial\2021_07_12_2doparcial_entregable_64bits\tdaarbol\tdaarbol.h
+	"../TDA/TDA.h"
+
+1625502226 e:\universidad\programacion\practica  para parcial 2\2021_07_12_2doparcial\2021_07_12_2doparcial\2021_07_12_2doparcial_entregable_64bits\tda\tda.h
+

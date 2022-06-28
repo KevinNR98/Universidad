@@ -1,0 +1,14 @@
+# depslib dependency file v1.0
+1625186521 source:e:\universidad\programacion\semana 9\practica\pilacircular\main.c
+	<stdio.h>
+	<stdlib.h>
+	"PilaCircular.h"
+
+1625186453 e:\universidad\programacion\semana 9\practica\pilacircular\pilacircular.h
+
+1625186572 source:e:\universidad\programacion\semana 9\practica\pilacircular\pilacircular.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"PilaCircular.h"
+

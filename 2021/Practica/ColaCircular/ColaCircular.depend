@@ -1,0 +1,14 @@
+# depslib dependency file v1.0
+1625187391 source:e:\universidad\programacion\semana 9\practica\colacircular\colacircular.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"ColaCircular.h"
+
+1625188450 e:\universidad\programacion\semana 9\practica\colacircular\colacircular.h
+
+1625187413 source:e:\universidad\programacion\semana 9\practica\colacircular\main.c
+	<stdio.h>
+	<stdlib.h>
+	"ColaCircular.h"
+

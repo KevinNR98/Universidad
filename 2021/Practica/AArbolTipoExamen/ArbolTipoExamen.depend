@@ -1,0 +1,171 @@
+# depslib dependency file v1.0
+1593709364 source:c:\users\pabli\git\programacion_clase\bib\arbol.c
+	<stdlib.h>
+	<string.h>
+	<stdio.h>
+	<math.h>
+	"Arbol.h"
+	"butils.h"
+	"Arbol_pan.h"
+
+1593644040 .h"
+
+1593708351 c:\users\pabli\git\programacion_clase\bib\arbol.h
+
+1593531572 c:\users\pabli\git\programacion_clase\bib\butils.h
+	<stdlib.h>
+	<stdio.h>
+	"Arbol.h"
+
+1593646064 
+
+1593554548 source:c:\users\pabli\git\programacion_clase\bib\butils.c
+	"butils.h"
+	<stdio.h>
+	<string.h>
+	"../ArbolClase/alumnos.h"
+
+1593554548 lase/alumnos.h"
+
+1593553790 c:\users\pabli\git\programacion_clase\arbolclase\alumnos.h
+	<stdlib.h>
+
+1593553796 source:c:\users\pabli\git\programacion_clase\arboltipoexamen\alumnos.c
+	"alumnos.h"
+	<stdio.h>
+
+1593646064 c:\users\pabli\git\programacion_clase\arboltipoexamen\alumnos.h
+	<stdlib.h>
+
+1593710043 source:c:\users\pabli\git\programacion_clase\arboltipoexamen\main.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	"menu.h"
+	"../bib/Arbol.h"
+	"../bib/butils.h"
+	"alumnos.h"
+
+1593646540 "
+
+1593452018 c:\users\pabli\git\programacion_clase\arboltipoexamen\menu.h
+
+1593455893 source:c:\users\pabli\git\programacion_clase\arboltipoexamen\menu.c
+	<stdio.h>
+	<string.h>
+	<ctype.h>
+	"menu.h"
+
+1593554548 source:/media/pablo/Acer/Users/pabli/git/Programacion_clase/bib/butils.c
+	"butils.h"
+	<stdio.h>
+	<string.h>
+	"../ArbolClase/alumnos.h"
+
+1593531572 /media/pablo/Acer/Users/pabli/git/Programacion_clase/bib/butils.h
+	<stdlib.h>
+	<stdio.h>
+	"Arbol.h"
+
+1593708351 /media/pablo/Acer/Users/pabli/git/Programacion_clase/bib/Arbol.h
+
+1593553790 /media/pablo/Acer/Users/pabli/git/Programacion_clase/ArbolClase/alumnos.h
+	<stdlib.h>
+
+1593553796 source:/media/pablo/Acer/Users/pabli/git/Programacion_clase/ArbolTipoExamen/alumnos.c
+	"alumnos.h"
+	<stdio.h>
+
+1593646064 /media/pablo/Acer/Users/pabli/git/Programacion_clase/ArbolTipoExamen/alumnos.h
+	<stdlib.h>
+
+1593455893 source:/media/pablo/Acer/Users/pabli/git/Programacion_clase/ArbolTipoExamen/menu.c
+	<stdio.h>
+	<string.h>
+	<ctype.h>
+	"menu.h"
+
+1593452018 /media/pablo/Acer/Users/pabli/git/Programacion_clase/ArbolTipoExamen/menu.h
+
+1593710043 source:/media/pablo/Acer/Users/pabli/git/Programacion_clase/ArbolTipoExamen/main.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	"menu.h"
+	"../bib/Arbol.h"
+	"../bib/butils.h"
+	"alumnos.h"
+
+1593709364 source:/media/pablo/Acer/Users/pabli/git/Programacion_clase/bib/Arbol.c
+	<stdlib.h>
+	<string.h>
+	<stdio.h>
+	<math.h>
+	"Arbol.h"
+	"butils.h"
+	"Arbol_pan.h"
+
+1593783426 source:c:\users\pabli\git\programacion_clase\aarboltipoexamen\alumnos.c
+	"alumnos.h"
+	<stdio.h>
+
+1625589348 c:\users\pabli\git\programacion_clase\aarboltipoexamen\alumnos.h
+	<stdlib.h>
+
+1625589284 source:c:\users\pabli\git\programacion_clase\aarboltipoexamen\main.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	"menu.h"
+	"alumnos.h"
+
+1593452018 c:\users\pabli\git\programacion_clase\aarboltipoexamen\menu.h
+
+1593455893 source:c:\users\pabli\git\programacion_clase\aarboltipoexamen\menu.c
+	<stdio.h>
+	<string.h>
+	<ctype.h>
+	"menu.h"
+
+1593455893 source:e:\universidad\programacion\semana 10\practica\aarboltipoexamen\menu.c
+	<stdio.h>
+	<string.h>
+	<ctype.h>
+	"menu.h"
+
+1593452018 e:\universidad\programacion\semana 10\practica\aarboltipoexamen\menu.h
+
+1625592050 source:e:\universidad\programacion\semana 10\practica\aarboltipoexamen\alumnos.c
+	"alumnos.h"
+	<stdio.h>
+
+1625592050 e:\universidad\programacion\semana 10\practica\aarboltipoexamen\alumnos.h
+	<stdlib.h>
+
+1625685009 source:e:\universidad\programacion\semana 10\practica\aarboltipoexamen\main.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	"menu.h"
+	"alumnos.h"
+	"../../../Librerias/Arbol.h"
+	"utiles.h"
+
+1625685173 source:e:\universidad\programacion\semana 10\practica\aarboltipoexamen\utiles.c
+	<stdio.h>
+	<stdlib.h>
+	"utiles.h"
+	"alumnos.h"
+	"../../../Librerias/Arbol.h"
+
+1625684444 e:\universidad\programacion\semana 10\practica\aarboltipoexamen\utiles.h
+	"../../../Librerias/Arbol.h"
+
+1625682033 source:e:\universidad\programacion\librerias\arbol.c
+	<stdio.h>
+	<string.h>
+	<stdlib.h>
+	"Arbol.h"
+
+1625682033 e:\universidad\programacion\librerias\arbol.h
+

@@ -1,0 +1,37 @@
+# depslib dependency file v1.0
+1541893088 source:c:\users\dell\desktop\2do parciales\entregable_2018-07-10\2doparcialcpp\horadeldia.cpp
+	"horadeldia.h"
+	<iostream>
+
+1541892748 c:\users\dell\desktop\2do parciales\entregable_2018-07-10\2doparcialcpp\horadeldia.h
+	<iostream>
+
+1541893173 source:c:\users\dell\desktop\2do parciales\entregable_2018-07-10\2doparcialcpp\main.cpp
+	"horadeldia.h"
+	<iostream>
+	<windows.h>
+
+1542646320 source:e:\universidad\programacion\descargas\nueva carpeta\parciales-20210527t203520z-001\parciales\2dos parciales\resueltos\entregable_2018-07-10 (semi bien)\entregable_2018-07-10 (semi bien)\2doparcialcpp\horadeldia.cpp
+	"horadeldia.h"
+	<iostream>
+
+1542646322 e:\universidad\programacion\descargas\nueva carpeta\parciales-20210527t203520z-001\parciales\2dos parciales\resueltos\entregable_2018-07-10 (semi bien)\entregable_2018-07-10 (semi bien)\2doparcialcpp\horadeldia.h
+	<iostream>
+
+1542646322 source:e:\universidad\programacion\descargas\nueva carpeta\parciales-20210527t203520z-001\parciales\2dos parciales\resueltos\entregable_2018-07-10 (semi bien)\entregable_2018-07-10 (semi bien)\2doparcialcpp\main.cpp
+	"horadeldia.h"
+	<iostream>
+	<windows.h>
+
+1542646320 source:e:\universidad\programacion\practica  para parcial 2\c++\2doparcialcpp\horadeldia.cpp
+	"horadeldia.h"
+	<iostream>
+
+1542646322 e:\universidad\programacion\practica  para parcial 2\c++\2doparcialcpp\horadeldia.h
+	<iostream>
+
+1542646322 source:e:\universidad\programacion\practica  para parcial 2\c++\2doparcialcpp\main.cpp
+	"horadeldia.h"
+	<iostream>
+	<windows.h>
+

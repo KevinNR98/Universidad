@@ -1,0 +1,34 @@
+# depslib dependency file v1.0
+1543348135 source:c:\users\laboratorios\desktop\parcial\2doparcialcpp\ivector.cpp
+	"ivector.h"
+
+1543347531 c:\users\laboratorios\desktop\parcial\2doparcialcpp\ivector.h
+	<iostream>
+	<stdexcept>
+
+1543347885 source:c:\users\laboratorios\desktop\parcial\2doparcialcpp\main.cpp
+	<iostream>
+	"ivector.h"
+
+1564070242 source:e:\universidad\programacion\descargas\nueva carpeta\parciales-20210527t203520z-001\parciales\2dos parciales\resueltos\mi parcial 2 (renata y pezzola)\entregable_2018_11_27\2doparcialcpp\ivector.cpp
+	"ivector.h"
+
+1564070242 e:\universidad\programacion\descargas\nueva carpeta\parciales-20210527t203520z-001\parciales\2dos parciales\resueltos\mi parcial 2 (renata y pezzola)\entregable_2018_11_27\2doparcialcpp\ivector.h
+	<iostream>
+	<stdexcept>
+
+1564070242 source:e:\universidad\programacion\descargas\nueva carpeta\parciales-20210527t203520z-001\parciales\2dos parciales\resueltos\mi parcial 2 (renata y pezzola)\entregable_2018_11_27\2doparcialcpp\main.cpp
+	<iostream>
+	"ivector.h"
+
+1564070242 source:e:\universidad\programacion\practica  para parcial 2\c++\2doparcialcpp1\ivector.cpp
+	"ivector.h"
+
+1564070242 e:\universidad\programacion\practica  para parcial 2\c++\2doparcialcpp1\ivector.h
+	<iostream>
+	<stdexcept>
+
+1564070242 source:e:\universidad\programacion\practica  para parcial 2\c++\2doparcialcpp1\main.cpp
+	<iostream>
+	"ivector.h"
+

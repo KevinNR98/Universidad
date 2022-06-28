@@ -1,0 +1,14 @@
+# depslib dependency file v1.0
+1625170261 source:e:\universidad\programacion\semana 9\practica\listacircular\main.c
+	<stdio.h>
+	<stdlib.h>
+	"ListaCircular.h"
+
+1624644237 e:\universidad\programacion\semana 9\practica\listacircular\listacircular.h
+
+1625173109 source:e:\universidad\programacion\semana 9\practica\listacircular\listacircular.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"ListaCircular.h"
+
