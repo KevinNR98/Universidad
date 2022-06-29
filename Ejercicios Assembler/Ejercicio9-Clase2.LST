@@ -1,0 +1,47 @@
+  ADDR B1 B2 B3 B4 E:\Universidad\Arquitectura de Computadoras\     PAGE       1
+
+                   *recorro un vector de elementos de 8 bits
+                   *
+                   *
+                   RWM     EQU     0
+                   ROM     EQU     $C000
+                   valores EQU     20
+
+                           ORG     RWM
+                   ceros   RMB     1
+                   vec     RMB     valores
+                   cont    RMB     1
+
+                           ORG     ROM
+
+  C000 7F 00 00            CLR     ceros
+  C003 CE 00 15            LDX     #(vec+valores)
+  C006 A6 00       bucle   LDAA    0,x
+  C008 26 03               BNE     noCero
+  C00A 7C 00 00            INC     ceros
+  C00D 09          noCero  DEX
+  C00E 8C 00 01            CPX     #vec ;Compara X con memoria, hace IX - 20
+  C011 24 F3               BHS     bucle
+
+  C013 20 FE       fin     bra     fin
+
+
+
+                           ORG     vec
+  0001 01 02 03 04         DB      1,2,3,4,5,0,0,5,8,0,1,2,3,4,5,0,0,5,8,0
+. 0005 05 00 00 05
+. 0009 08 30 01 02
+. 000D 03 04 05 00
+. 0011 00 05 08 00
+
+  Symbol Table 
+
+  VALORES            0014
+  RWM                0000
+  BUCLE              C006
+  VEC                0001
+  NOCERO             C00D
+  FIN                C013
+  CONT               0015
+  ROM                C000
+  CEROS              0000

@@ -1,0 +1,81 @@
+  ADDR B1 B2 B3 B4 E:\Universidad\Arquitectura de Computadoras\     PAGE       1
+
+                   RESET   EQU     $FFFE
+                   RAM     EQU     $0000
+                   ROM     EQU     $C000
+
+
+                           ;Vectore de Reset
+                           ORG     RESET
+                           ORG     RAM
+  0000 C0 00               DW      Main
+
+
+                           ;Comienzo de Codigo
+                           ORG     ROM
+                   Main
+                           ;Cargamos el stack pointer
+  C000 8E 00 FF            LDS     #$00FF
+  C003 4F                  CLRA
+  C004 5F                  CLRB
+  C005 18 CE 00 00         LDY     #0000
+  C009 CE C0 11            LDX     #Vector
+  C00C BD C0 15            JSR     ITOAU32BE
+  C00F 20 FE       FIN     BRA     FIN
+
+                           ;;Vector de numeros de 32 bits sin signo
+  C011 12 34 56 78 Vector  DW  $1234,$5678
+
+
+                   ;;;;;SubRutina  ITOAU32BE
+                   ;;;;;;Recibe la dir de un vec
+                   ;;;;;;;que lo convierta a una cadena de caracteres ASCII, a
+.                  partir de la direccin indicada por
+                   ;;;;;;;;el registro IY
+                   ITOAU32BE:
+                           ;;Guardo A y B por que los voy a usar
+  C015 36                  PSHA
+  C016 37                  PSHB
+  C017 18 3C               PSHY
+
+  C019 EC 00               LDD     0,X
+                           STX     dirmin
+E                                  ^ Unknown identifier.
+
+                   LOOP:
+  C01B 08                  INX
+  C01C 08                  INX
+  C01D 1A EE 00            LDY     0,X
+  C020 27 0F               BEQ     FINRUTINA
+                           ;;Si sigue, el elemento no es 0
+  C022 1A A3 00            CPD     0,X
+                           ;;Si D es menor que 0,X seguimos
+  C025 2F F4               BLE     LOOP
+                           ;;Si es menor, cambiamos
+  C027 EC 00               LDD     0,X
+                           STX     dirmin
+E                                  ^ Unknown identifier.
+  C029 20 F0               BRA     LOOP
+
+                   FINRUTINA:
+                           ;;Ahora D tiene la Dir del minimo
+                           LDX     dirmin   ;GURADO EL MENOR EN IX
+E                                  ^ Unknown identifier.
+  C02B 18 38               PULY
+  C02D 33                  PULB
+  C02E 32                  PULA
+  C02F 39                  RTS
+  Symbol Table     E:\Universidad\Arquitectura de Computadoras\     PAGE       2
+
+
+  Symbol Table 
+
+  ITOAU32BE          C015
+  RAM                0000
+  MAIN               C000
+  VECTOR             C011
+  RESET              FFFE
+  FIN                C00F
+  FINRUTINA          C02B
+  ROM                C000
+  LOOP               C01B

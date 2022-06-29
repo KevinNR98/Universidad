@@ -1,0 +1,238 @@
+  ADDR B1 B2 B3 B4 E:\Universidad\Arquitectura de Computadoras\     PAGE       1
+
+                   ROM             EQU     $C000
+                   RAM             EQU     $0000
+                   LEDS            EQU     $1004
+                   TECLAS          EQU     $1003
+                   RESET           EQU     $FFFE
+                   IRQ             EQU     $FFF2
+                   XIRQ            EQU     $FFF4
+                   CONFIG          EQU     $1039
+                   LCDDATA         EQU     $1040
+
+                   MASKNMI         EQU     %10111111
+                   MASKIRQ         EQU     %11101111
+                   MASKEDGE        EQU     %00100000
+
+                                   ORG     RAM
+                   Coca            RMB     1
+                   Manaos          RMB     1
+                   Bichy           RMB     1
+                   Goliat          RMB     1
+
+                                   ORG     RAM
+  0000 00 08 08 08                 Db      0,8,8,8
+
+                                   ORG     RAM+20
+                   SALDO           RMB     1
+
+
+
+                                   ORG     ROM
+
+  C000 07                          TPA
+  C001 84 AF                       ANDA    #(MASKNMI&MASKIRQ)
+  C003 06                          TAP
+  C004 B6 10 39                    LDAA    CONFIG
+  C007 8A 20                       ORAA    #MASKEDGE
+  C009 B7 10 39                    STAA    CONFIG
+
+  C00C 7F 10 40                    CLR     LCDDATA
+  C00F 7F 00 14                    CLR     SALDO
+  C012 BD C0 17                    JSR     MENUOPCIONES
+                   FIN
+
+
+  C015 20 FE                       BRA     FIN
+
+
+                   MENUOPCIONES
+  C017 CE 00 00                    LDX     #$0000
+  C01A 7F 10 40                    CLR     LCDDATA
+  C01D 18 CE 00 04                 LDY     #4
+                   MENU
+  C021 A6 00                       LDAA    0,X
+  C023 8B 30                       ADDA    #'0
+  C025 B7 10 40                    STAA    LCDDATA
+  C028 08                          INX
+  C029 18 09                       DEY
+  C02B 27 02                       BEQ     Salir
+  C02D 20 F2                       BRA     MENU
+
+                   Salir
+  C02F 39                          RTS
+
+
+
+
+  ADDR B1 B2 B3 B4 E:\Universidad\Arquitectura de Computadoras\     PAGE       2
+
+                   RUTINA_IRQ
+  C030 F6 10 03                    LDAB    TECLAS
+  C033 C4 F0                       ANDB    #%11110000
+
+  C035 C1 80                       CMPB    #128
+  C037 26 1F                       BNE     salto1          ;selecciono coca?
+
+  C039 D6 00                       LDAB    Coca            ; hay stock?
+  C03B C1 00                       CMPB    #0
+  C03D 26 07                       BNE     conStock1
+  C03F C6 45                       LDAB    #'E
+  C041 F7 10 40                    STAB    LCDDATA
+  C044 20 72                       BRA     salto4
+                   conStock1
+  C046 D6 14                       LDAB    SALDO           ;hay plata?
+  C048 C1 96                       CMPB    #150
+  C04A 23 0C                       BLS     salto1
+
+  C04C D6 00                       LDAB    Coca            ;descuento stock
+  C04E C2 01                       SBCB    #1
+  C050 D7 00                       STAB    Coca
+
+  C052 D6 14                       LDAB    SALDO           ;descuento el saldo
+  C054 C2 96                       SBCB    #150
+  C056 D7 14                       STAB    SALDO
+
+
+                   salto1
+
+  C058 81 40                       CMPA    #64
+  C05A 26 1C                       BNE     salto2          ;selecciono coca?
+
+  C05C D6 01                       LDAB    Manaos          ; hay stock?
+  C05E C1 00                       CMPB    #0
+  C060 26 04                       BNE     conStock2
+  C062 C6 45                       LDAB    #'E
+  C064 20 52                       BRA     salto4
+                   conStock2
+  C066 D6 14                       LDAB    SALDO           ;hay plata?
+  C068 C1 78                       CMPB    #120
+  C06A 23 0C                       BLS     salto2
+
+  C06C D6 01                       LDAB    Manaos          ;descuento stock
+  C06E C2 01                       SBCB    #1
+  C070 D7 01                       STAB    Manaos
+
+  C072 D6 14                       LDAB    SALDO           ;descuento el saldo
+  C074 C2 78                       SBCB    #120
+  C076 D7 14                       STAB    SALDO
+                   salto2
+  C078 81 20                       CMPA    #32
+  C07A 26 1C                       BNE     salto3          ;selecciono coca?
+
+  C07C D6 02                       LDAB    Bichy           ; hay stock?
+  C07E C1 00                       CMPB    #0
+  C080 26 04                       BNE     conStock3
+  C082 C6 36                       LDAB    #'69
+  C084 20 32                       BRA     salto4
+                   conStock3
+  C086 D6 14                       LDAB    SALDO           ;hay plata?
+  C088 C1 5A                       CMPB    #90
+  C08A 23 0C                       BLS     salto3
+
+  C08C D6 02                       LDAB    Bichy           ;descuento stock
+  C08E C2 01                       SBCB    #1
+  ADDR B1 B2 B3 B4 E:\Universidad\Arquitectura de Computadoras\     PAGE       3
+
+  C090 D7 02                       STAB    Bichy
+
+  C092 D6 14                       LDAB    SALDO           ;descuento el saldo
+  C094 C2 5A                       SBCB    #90
+  C096 D7 14                       STAB    SALDO
+                   salto3
+  C098 81 10                       CMPA    #16
+  C09A 26 1C                       BNE     salto4          ;selecciono coca?
+
+  C09C D6 03                       LDAB    Goliat          ; hay stock?
+  C09E C1 00                       CMPB    #0
+  C0A0 26 04                       BNE     conStock4
+  C0A2 C6 45                       LDAB    #'E
+  C0A4 20 12                       BRA     salto4
+                   conStock4
+  C0A6 D6 14                       LDAB    SALDO           ;hay plata?
+  C0A8 C1 73                       CMPB    #115
+  C0AA 23 0C                       BLS     salto4
+
+  C0AC D6 03                       LDAB    Goliat          ;descuento stock
+  C0AE C2 01                       SBCB    #1
+  C0B0 D7 03                       STAB    Goliat
+
+  C0B2 D6 14                       LDAB    SALDO           ;descuento el saldo
+  C0B4 C2 73                       SBCB    #115
+  C0B6 D7 14                       STAB    SALDO
+
+                   salto4
+
+  C0B8 BD C0 17                    JSR     MENUOPCIONES
+
+  C0BB 3B                          RTI
+
+                   RUTINA_XIRQ
+  C0BC F6 10 03                    LDAB    TECLAS
+  C0BF C4 0F                       ANDB    #%00001111
+  C0C1 C1 02                       CMPB    #2              ;2pe
+  C0C3 26 02                       BNE     paso2
+  C0C5 8B 02                       ADDA    #2
+                   paso2
+
+  C0C7 C1 05                       CMPB    #5              ;5pe
+
+  C0C9 26 02                       BNE     paso5
+  C0CB 8B 05                       ADDA    #5
+                   paso5
+  C0CD C1 0A                       CMPB    #10             ;10pe
+  C0CF 26 02                       BNE     paso10
+  C0D1 8B 0A                       ADDA    #10
+                   paso10
+  C0D3 D6 14                       LDAB    SALDO
+  C0D5 1B                          ABA
+  C0D6 97 14                       STAA    SALDO
+
+  C0D8 3B                          RTI
+
+
+
+                                   ORG     IRQ
+  FFF2 C0 30                       DW      RUTINA_IRQ
+
+                                   ORG     XIRQ
+  FFF4 C0 BC                       DW      RUTINA_XIRQ
+
+  Symbol Table 
+  Symbol Table     E:\Universidad\Arquitectura de Computadoras\     PAGE       4
+
+
+  MENU               C021
+  SALIR              C02F
+  CONFIG             1039
+  RAM                0000
+  LEDS               1004
+  COCA               0000
+  RUTINA_XIRQ        C0BC
+  MANAOS             0001
+  IRQ                FFF2
+  XIRQ               FFF4
+  BICHY              0002
+  MENUOPCIONES       C017
+  MASKEDGE           0020
+  LCDDATA            1040
+  MASKIRQ            00EF
+  RESET              FFFE
+  TECLAS             1003
+  PASO10             C0D3
+  FIN                C015
+  CONSTOCK1          C046
+  CONSTOCK2          C066
+  CONSTOCK3          C086
+  CONSTOCK4          C0A6
+  SALDO              0014
+  SALTO1             C058
+  MASKNMI            00BF
+  SALTO2             C078
+  SALTO3             C098
+  SALTO4             C0B8
+  GOLIAT             0003
+  ROM                C000
+  RUTINA_IRQ         C030
+  PASO2              C0C7
+  PASO5              C0CD

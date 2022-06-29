@@ -1,0 +1,52 @@
+  ADDR B1 B2 B3 B4 E:\Universidad\Arquitectura de Computadoras\     PAGE       1
+
+                   RESET   EQU     $FFFE
+                   RAM     EQU     $0000
+                   ROM     EQU     $C000
+
+                           ;Vector de Reset
+                           ORG     RESET
+                           ORG     RAM
+  0000 C0 00               DW      MAIN
+
+                           ;;;Inicio de programa
+                           ORG     ROM
+
+
+                   MAIN
+  C000 4F                  CLRA
+  C001 5F                  CLRB
+  C002 CE C0 1F            LDX     #vector
+  C005 18 CE 00 00         LDY     #0
+  C009 EC 00       LOOP    LDD     0,X
+  C00B 27 10               BEQ     FIN
+  C00D 1A 83 00 61         CPD     #'a
+  C011 2B 04               BMI     esMayus
+  C013 27 04               BEQ     esMinus
+  C015 2A 02               BPL     esMinus
+  C017 18 08       esMayus INY             ;cuento la cant de mayusculas
+  C019 08          esMinus INX
+  C01A 08                  INX
+  C01B 26 EC               BNE     LOOP
+
+  C01D 20 FE       FIN     BRA     FIN
+
+
+
+  C01F 00 41 00 61 Vector  FDB    'A,'a,'B,'b,'C,'C,'c,00
+. C023 00 42 00 62
+. C027 00 34 00 43
+. C02B 00 63 00 00
+
+
+  Symbol Table 
+
+  RAM                0000
+  ESMINUS            C019
+  MAIN               C000
+  VECTOR             C01F
+  RESET              FFFE
+  FIN                C01D
+  ROM                C000
+  LOOP               C009
+  ESMAYUS            C017

@@ -1,0 +1,60 @@
+  ADDR B1 B2 B3 B4 E:\Universidad\Arquitectura de Computadoras\     PAGE       1
+
+                   RESET   EQU     $FFFE
+                   RAM     EQU     $0000
+                   ROM     EQU     $C000
+
+                           ORG     RESET
+                           ORG     RAM
+  0000 C0 00               DW      Main
+
+                           ORG     ROM
+                   Main
+  C000 8E 00 FF            LDS     #$00FF
+  C003 18 CE 00 00         LDY     #0
+  C007 CE C0 0F            LDX     #Vector
+  C00A BD C0 1C            JSR     C24IMPBE
+
+  C00D 20 FE       FIN     BRA     FIN
+
+  C00F 01 02 03 04 Vector  DB      $1,$2,$3,$4,$5,$6,$7,$8,$9,$a,$b,$c,0
+. C013 05 06 07 08
+. C017 09 30 0B 0C
+. C01B 00
+
+
+                   ;;;;;SubRutina  C24IMPBE
+                   ;;;;;;Recibe la dir de un vec
+                   ;;;;;;;Devuelve la cant de nros impares en el registro Y
+
+                   C24IMPBE
+  C01C 36                          PSHA
+  C01D 37                          PSHB
+
+  C01E A6 02       LOOP            LDAA    2,X
+  C020 47                          ASRA
+  C021 24 02                       BCC     noCarry
+  C023 18 08                       INY
+                   noCarry
+  C025 08                          INX
+  C026 08                          INX
+  C027 08                          INX
+  C028 A6 00                       LDAA    0,X
+  C02A 27 02                       BEQ     FINRUTINA
+  C02C 20 F0                       BRA     LOOP
+
+  C02E 32          FINRUTINA       PULA
+  C02F 39                          RTS
+
+  Symbol Table 
+
+  RAM                0000
+  NOCARRY            C025
+  MAIN               C000
+  VECTOR             C00F
+  RESET              FFFE
+  FIN                C00D
+  FINRUTINA          C02E
+  ROM                C000
+  LOOP               C01E
+  C24IMPBE           C01C

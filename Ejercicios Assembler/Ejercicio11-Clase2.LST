@@ -1,0 +1,72 @@
+  ADDR B1 B2 B3 B4 E:\Universidad\Arquitectura de Computadoras\     PAGE       1
+
+                   *recorro un vector de elementos de 8 bits
+                   *los ceros, los negativos, y los multiplos de 4
+                   *
+                   RWM     EQU     0
+                   ROM     EQU     $C000
+                   valores EQU     19
+
+                           ORG     RWM
+                   cantC   RMB     1       *sugerencia: plantearlo para +255
+.                  ocurrencias
+                   cantN   RMB     1
+                   cant4   RMB     1
+                   dirIni  RMB     2       *aqui tenemos la direccion inicial(NO
+.                  EL VECTO! )
+                   dirFin  RMB     2       *ATTENTI! guardo las direcciones en 2
+.                  bytes
+
+                           ORG     ROM
+                   *pongo en cero los contadores de cosas
+  C000 7F 00 00            CLR     cantC
+  C003 7F 00 01            CLR     cantN
+  C006 7F 00 02            CLR     cant4
+
+  C009 DE 03               LDX     dirIni
+  C00B A6 00       bucle   LDAA    0,x
+  C00D 26 03               BNE     noCero
+  C00F 7C 00 00            INC     cantC   *actualiza el flag N
+                   noCero
+  C012 81 00               CMPA    #0
+  C014 2A 03               BPL     noNeg   *salta si N=0
+  C016 7C 00 01            INC     cantN
+                   noNeg
+  C019 44                  LSRA
+  C01A 25 06               BCS     noMul4
+  C01C 44                  LSRA
+  C01D 25 03               BCS     noMul4
+  C01F 7C 00 02            INC     cant4
+                   noMul4
+  C022 08                  INX
+  C023 9C 05               CPX     dirFin
+  C025 23 E4               BLS     bucle
+  C027 20 FE       fin     BRA     fin
+
+
+
+
+                           ORG     $0030
+  0030 01 02 03 04         DB      1,2,3,4,5,0,0,-5,8,0,1,-2,3,-4,5,0,0,5,8,0
+. 0034 05 00 00 FB
+. 0038 08 30 01 FE
+. 003C 03 FC 05 00
+. 0040 00 05 08 00
+
+  Symbol Table 
+
+  DIRFIN             0005
+  DIRINI             0003
+  VALORES            0013
+  RWM                0000
+  CANT4              0002
+  CANTC              0000
+  BUCLE              C00B
+  NOCERO             C012
+  CANTN              0001
+  NOMUL4             C022
+  Symbol Table     E:\Universidad\Arquitectura de Computadoras\     PAGE       2
+
+  FIN                C027
+  ROM                C000
+  NONEG              C019

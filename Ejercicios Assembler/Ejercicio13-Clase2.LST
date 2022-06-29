@@ -1,0 +1,46 @@
+  ADDR B1 B2 B3 B4 E:\Universidad\Arquitectura de Computadoras\     PAGE       1
+
+                   *recorro un vector de elementos de 16 bits
+                   *y cuento las ocurrencias de un valor objetivo
+
+
+                   RWM             EQU     0
+                   ROM             EQU     $C000
+
+
+                                   ORG     RWM
+  0000 99 99 12 34 vector          DW      $9999,$1234,$4444,$90,$1234,$4312,
+. 0004 44 44 00 90 $5678,9090    *esto en RWM no tiene sentido
+. 0008 12 39 43 12
+. 000C 56 78 23 82
+                   cantidad        RMB     1
+  0011 12 34       objetivo        FDB     $1234           *esto en RWM no tiene
+.                  sentido
+
+
+                                   ORG     ROM
+  C000 7F 00 10                    CLR     cantidad
+  C003 CE 00 00                    LDX     #vector
+  C006 DC 11                       LDD     objetivo
+  C008 1A A3 00    loop            CPD     0,x
+  C00B 26 03                       BNE     noSosVo
+  C00D 7C 00 10                    INC     cantidad
+                   noSosVo
+  C010 08                          INX
+  C011 08                          INX     ;incremento dos veces por que estamos
+.                  en 16 bits
+  C012 8C 00 10                    CPX     #cantidad       ;aprovecho que tengo
+.                  una reserva a cont. del vector
+  C015 25 F1                       BLO     loop
+  C017 20 FE       fin             BRA     fin
+
+  Symbol Table 
+
+  OBJETIVO           0011
+  CANTIDAD           0010
+  RWM                0000
+  NOSOSVO            C010
+  VECTOR             0000
+  FIN                C017
+  ROM                C000
+  LOOP               C008

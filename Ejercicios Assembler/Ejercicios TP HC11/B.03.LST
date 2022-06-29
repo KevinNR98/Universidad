@@ -1,0 +1,74 @@
+  ADDR B1 B2 B3 B4 E:\Universidad\Arquitectura de Computadoras\     PAGE       1
+
+                   ;;; Valores Cosntantes
+                   LEDS            EQU $1004
+                   TECLAS          EQU $1003
+                   valor1          EQU 1
+                   valor2          EQU 33
+                   valor3          EQU 65
+                   led1            EQU 1
+                   led2            EQU 3
+                   led3            EQU 7
+
+
+                   ROM             EQU $C000
+                   RAM             EQU $0000
+                   RESET           EQU $FFFE
+
+                                   ORG ROM
+                   Init:
+                                   ;;Inicializacion de variables o elementos
+                                   ;; Ponemos los LEDS en estado apagado
+  C000 7F 10 04                    CLR LEDS
+  C003 7F 10 03                    CLR TECLAS
+
+
+                   Main:
+                                   ;; Loop infinito donde leemos las teclas
+                                   ;; y las copiamos a los LEDS
+  C006 B6 10 03                    LDAA TECLAS
+  C009 C6 01                       LDAB #led1
+  C00B 81 01                       CMPA #valor1
+  C00D 2B 03                       BMI  noPrendo
+  C00F F7 10 04                    STAB LEDS
+                   noPrendo
+  C012 C6 21                       LDAB #valor2
+  C014 C6 03                       LDAB #led2
+  C016 81 21                       CMPA #valor2
+  C018 2B 03                       BMI  noPrendo2
+  C01A F7 10 04                    STAB  LEDS
+                   noPrendo2
+  C01D C6 41                       LDAB #valor3
+  C01F C6 07                       LDAB #led3
+  C021 81 41                       CMPA #valor3
+  C023 2B 03                       BMI  noPrendo3
+  C025 F7 10 04                    STAB  LEDS
+                   noPrendo3
+  C028 7F 10 03                    CLR TECLAS
+  C02B 20 D9                       BRA MAIN
+
+
+
+                                   ORG RESET
+  FFFE C0 00                       DW  Init
+
+  Symbol Table 
+
+  LED1               0001
+  LED2               0003
+  LED3               0007
+  NOPRENDO           C012
+  RAM                0000
+  LEDS               1004
+  NOPRENDO2          C01D
+  NOPRENDO3          C028
+  INIT               C000
+  MAIN               C006
+  RESET              FFFE
+  Symbol Table     E:\Universidad\Arquitectura de Computadoras\     PAGE       2
+
+  VALOR1             0001
+  VALOR2             0021
+  VALOR3             0041
+  TECLAS             1003
+  ROM                C000

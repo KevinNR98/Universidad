@@ -1,0 +1,81 @@
+  ADDR B1 B2 B3 B4 thrass11.tmp                                     PAGE       1
+
+                   RESET   EQU     $FFFE
+                   RAM     EQU     $0000
+                   ROM     EQU     $C000
+                   CANTVEC EQU     20
+
+                           ;Vector RESET
+                           ORG     RESET
+  FFFE C0 00               DW      Main
+
+                           ORG     RAM
+                   NRONEG  RMB     2
+                           ;Comienzo del Codigo
+                           ORG     ROM
+                   Main:
+                           ;Cargo el Stack Pointer
+  C000 8E 00 FF            LDS     #$00FF
+  C003 4F                  CLRA
+  C004 5F                  CLRB
+  C005 C6 14               LDAB    #CANTVEC ;Le mando la cant del vec
+  C007 CE C0 0F            LDX     #vector ;dir de vec en X
+  C00A BD C0 37            JSR     CANTNEGFIJA
+  C00D 20 FE       FIN     BRA     FIN
+
+                           ;Vector de nros signados
+  C00F 00 0A FF EC vector  DW  10,-20,-30,-30000,5000,31000,-32000,2,-31001,-
+. C013 FF E2 8A D0 32768,32767,23,-99,150,-15,9999,-3434,32,-12,20
+. C017 13 30 79 18
+. C01B 83 00 00 02
+. C01F 86 E7 80 66
+. C023 7F FF 00 17
+. C027 FF 9D 00 96
+. C02B FF 20 27 0F
+. C02F F2 96 00 20
+. C033 FF F4 00 14
+
+
+                   ;;;;Subrituna CANTNEGFIJA
+                   ;;;;;Recive la dir de vec en IX
+                   ;;;;;;Devuelve la cant de nros negativos
+                   CANTNEGFIJA:
+                           ;;Guardo los valosres de A por si lo modifico
+                           ;;Para poder devolverlos
+  C037 36                  PSHA
+                           ;Voy a usar Y para leer el vector asi que lo guardo
+  C038 18 3C               PSHY
+
+
+
+  C03A 1A EE 00    loop    LDY     0,X
+  C03D 2A 01               BPL     noNeg
+  C03F 4C                  INCA    ;guardo la cant de nros negativos
+                   noNeg
+  C040 08                  INX
+  C041 08                  INX
+  C042 5A                  DECB    ;;pasarselo por y que no me actualiza el flag
+.                  de negative
+  C043 26 F5               BNE     loop
+
+  C045 A7 00               STAA    0,X
+  C047 18 38               PULY
+  C049 32                  PULA
+  C04A 39                  RTS
+
+
+  Symbol Table 
+  Symbol Table     thrass11.tmp                                     PAGE       2
+
+
+  RAM                0000
+  NRONEG             0000
+  MAIN               C000
+  VECTOR             C00F
+  RESET              FFFE
+  CANTVEC            0014
+  CANTNEGFIJA        C037
+  FIN                C00D
+  ROM                C000
+  LOOP               C03A
+  NONEG              C040

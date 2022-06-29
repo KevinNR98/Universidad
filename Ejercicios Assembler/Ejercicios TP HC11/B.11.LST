@@ -1,0 +1,54 @@
+  ADDR B1 B2 B3 B4 E:\Universidad\Arquitectura de Computadoras\     PAGE       1
+
+                   RESET   EQU     $FFFE
+                   RAM     EQU     $0000
+                   ROM     EQU     $C000
+
+
+                           ORG     RESET
+                           ORG     RAM
+  0000 C0 00               DW      Main
+
+
+                           ORG     ROM
+                   MAIN:
+  C000 8E 00 FF            LDS     #$00FF
+  C003 4F                  CLRA
+  C004 5F                  CLRB
+  C005 18 CE 00 00         LDY     #0000
+  C009 CE C0 11            LDX     #vector
+  C00C BD C0 1B            JSR     COMP2BEB
+  C00F 20 FE       FIN     BRA     FIN
+
+                           ;;Vector de 64 bits
+  C011 00 FD 00 30 vector  FDB  $FD,$30,$0A14,$02CF,$F5EC
+. C015 0A 14 02 CF
+. C019 F5 EC
+
+
+
+                   ;;Subrituna COMP2BEB
+                   ;;;Recive la dir del vec en IX
+                   ;;;;Retorna el valor complementado
+                   COMP2BEB:
+  C01B 36                  PSHA
+  C01C 37                  PSHB
+  C01D 18 3C               PSHY
+
+  C01F 1A EE 00            LDY     0,X
+  C022 18 63 01            COM     1,Y
+
+
+  C025 39                  RTS
+
+
+
+  Symbol Table 
+
+  COMP2BEB           C01B
+  RAM                0000
+  MAIN               C000
+  VECTOR             C011
+  RESET              FFFE
+  FIN                C00F
+  ROM                C000

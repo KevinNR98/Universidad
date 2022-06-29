@@ -1,0 +1,36 @@
+  ADDR B1 B2 B3 B4 thrass11.tmp                                     PAGE       1
+
+                   *
+                   *
+                   *
+                   RWM     EQU     0
+                   ROM     EQU     $C000
+
+
+                           ORG     RWM
+                   dirini  RMB     2
+                   ceros   RMB     1
+
+                           ORG     ROM
+  C000 DE 00               LDX     dirini
+  C002 CE 00 00            LDX     #dirini         <-este no va
+  C005 20 FE       fin     bra     fin
+
+
+                           ORG     RWM
+  0000 00 20               DB      0,$20
+
+                           ORG     $0020
+  0020 01 02 03 04         DB      1,2,3,4,5,0,0,5,8,0,1,2,3,4,5,0,0,5,8,0
+. 0024 05 00 00 05
+. 0028 08 30 01 02
+. 002C 03 04 05 00
+. 0030 00 05 08 00
+
+  Symbol Table 
+
+  DIRINI             0000
+  RWM                0000
+  FIN                C005
+  ROM                C000
+  CEROS              0002

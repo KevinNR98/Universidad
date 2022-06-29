@@ -1,0 +1,66 @@
+  ADDR B1 B2 B3 B4 E:\Universidad\Arquitectura de Computadoras\     PAGE       1
+
+                   *Ejer Prueba
+                   *IX recibe la direccin vector, termina en 0
+                   *retorna en el registro IY la cantidad de elementos pares
+
+                   RESET   EQU     $FFFE
+                   RAM     EQU     $0000
+                   ROM     EQU     $C000
+
+                           ORG     RESET
+                           ORG     RAM
+  0000 C0 00               DW      Main
+
+                           ORG     ROM
+                   Main
+  C000 8E 00 FF            LDS     #$00FF
+  C003 18 CE 00 00         LDY     #0
+  C007 CE C0 0F            LDX     #Vector
+  C00A BD C0 21            JSR     PAR
+
+  C00D 20 FE       FIN     BRA     FIN
+                                   ;;vector de 16 bits
+  C00F 03 E8 07 D0 vector          DW      1000,2000,3999,4000,5555,6000,7777,
+. C013 0F 9F 0F A0 8000,0
+. C017 15 65 17 70
+. C01B 1E 61 1F 40
+. C01F 00 00
+
+
+                   ;;;;;SubRutina  PAR
+                   ;;;;;;Recibe la dir de un vec
+                   ;;;;;;;Devuelve la cant de nros pares en el registro Y
+                   PAR
+  C021 36                          PSHA
+  C022 37                          PSHB
+  C023 4F                          CLRA
+  C024 5F                          CLRB
+
+  C025 EC 00       LOOP            LDD     0,X
+  C027 27 09                       BEQ     FINRUTINA
+  C029 04                          LSRD
+  C02A 25 02                       BCS     impar   ; si no es cero es por que es
+.                  impar
+  C02C 18 08                       INY             ;cuenta par
+                   impar
+  C02E 08                          INX
+  C02F 08                          INX
+  C030 20 F3                       BRA     LOOP
+
+  C032 33          FINRUTINA       PULB
+  C033 32                          PULA
+  C034 39                          RTS
+
+  Symbol Table 
+
+  RAM                0000
+  IMPAR              C02E
+  MAIN               C000
+  PAR                C021
+  VECTOR             C00F
+  RESET              FFFE
+  FIN                C00D
+  FINRUTINA          C032
+  ROM                C000
+  LOOP               C025

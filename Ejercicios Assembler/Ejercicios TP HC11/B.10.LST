@@ -1,0 +1,88 @@
+  ADDR B1 B2 B3 B4 E:\Universidad\Arquitectura de Computadoras\     PAGE       1
+
+                   RESET   EQU     $FFFE
+                   RAM     EQU     $0000
+                   ROM     EQU     $C000
+
+
+                           ;Vectore de Reset
+                           ORG     RESET
+                           ORG     RAM
+                   dirmin  RMB     2
+  0002 C0 00               DW      Main
+
+
+                           ;Comienzo de Codigo
+                           ORG     ROM
+                   Main
+                           ;Cargamos el stack pointer
+  C000 8E 00 FF            LDS     #$00FF
+  C003 4F                  CLRA
+  C004 5F                  CLRB
+  C005 18 CE 00 00         LDY     #0000
+  C009 CE C0 11            LDX     #Vector
+  C00C BD C0 39            JSR     POSMIN
+  C00F 20 FE       FIN     BRA     FIN
+
+                           ;;Vector de numeros signados de (16 bits)
+                           ;;Termina con 0
+  C011 00 0A FF EC Vector  DW  10,-20,-30,-128,255,100,-99,2,-60,-56,32,23,-
+. C015 FF E2 FF 80 30000,15,-15,9,-32000,32,-12,0
+. C019 00 30 00 64
+. C01D FF 9D 00 02
+. C021 FF C4 FF 65
+. C025 00 20 00 17
+. C029 8A D0 00 0F
+. C02D FF 20 00 09
+. C031 83 00 00 20
+. C035 FF F4 00 00
+
+
+                   ;;;;;SubRutina  POSMIM
+                   ;;;;;;Recibe la dir de un vec
+                   ;;;;;;;Devuelve la pos de un el nro min del vec
+                   POSMIN:
+                           ;;Guardo A y B por que los voy a usar
+  C039 36                  PSHA
+  C03A 37                  PSHB
+  C03B 18 3C               PSHY
+
+  C03D EC 00               LDD     0,X
+  C03F DF 00               STX     dirmin
+
+                   LOOP:
+  C041 08                  INX
+  C042 08                  INX
+  C043 1A EE 00            LDY     0,X
+  C046 27 0B               BEQ     FINRUTINA
+                           ;;Si sigue, el elemento no es 0
+  C048 1A A3 00            CPD     0,X
+                           ;;Si D es menor que 0,X seguimos
+  C04B 2F F4               BLE     LOOP
+                           ;;Si es menor, cambiamos
+  C04D EC 00               LDD     0,X
+  C04F DF 00               STX     dirmin
+  C051 20 EE               BRA     LOOP
+
+                   FINRUTINA:
+  ADDR B1 B2 B3 B4 E:\Universidad\Arquitectura de Computadoras\     PAGE       2
+
+                           ;;Ahora D tiene la Dir del minimo
+  C053 DE 00               LDX     dirmin   ;GURADO EL MENOR EN IX
+  C055 18 38               PULY
+  C057 33                  PULB
+  C058 32                  PULA
+  C059 39                  RTS
+
+  Symbol Table 
+
+  RAM                0000
+  DIRMIN             0000
+  MAIN               C000
+  VECTOR             C011
+  POSMIN             C039
+  RESET              FFFE
+  FIN                C00F
+  FINRUTINA          C053
+  ROM                C000
+  LOOP               C041

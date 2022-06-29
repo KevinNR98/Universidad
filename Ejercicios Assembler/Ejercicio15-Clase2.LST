@@ -1,0 +1,61 @@
+  ADDR B1 B2 B3 B4 E:\Universidad\Arquitectura de Computadoras\     PAGE       1
+
+                   *recorro un vector de elementos de 16 bits
+                   *y cuento las ocurrencias de un valor objetivo
+                   *ademas guardo la direccion de la primer ocurrencia
+
+                   RWM             EQU     0
+                   ROM             EQU     $C000
+                   SWITCHS         EQU     $1003
+                   LEDS            EQU     $1004
+
+                   cantidad        RMB     1
+
+                   direc           RMB     2
+
+                                   ORG     ROM
+  C000 7F C0 00                    CLR     cantidad
+  C003 18 CE 00 01                 LDY     #1
+  C007 CE C0 27                    LDX     #vector
+  C00A FC C0 25                    LDD     objetivo
+  C00D 1A A3 00    loop            CPD     0,x
+  C010 26 0A                       BNE     noSosVo
+  C012 7C 10 04                    INC     LEDS
+
+  C015 18 09                       DEY
+  C017 26 03                       BNE     noSosVo
+  C019 FF C0 01                    STX     direc           ;no admite modo
+.                  inmediato
+
+                   noSosVo
+  C01C 08                          INX
+  C01D 08                          INX             ;incremento dos veces por que
+.                  estamos en 16 bits
+  C01E 8C C0 37                    CPX     #dummy  ;aprovecho que tengo una
+.                  reserva a cont. del vector
+  C021 25 EA                       BLO     loop
+  C023 20 FE       fin             BRA     fin
+
+
+  C025 12 34       objetivo        FDB     $1234           *esto en RWM no tiene
+.                  sentido
+  C027 99 99 12 34 vector          DW      $9999,$1234,$4444,$90,$1234,$4312,
+. C02B 44 44 00 90 $5678,9090    *esto en RWM no tiene sentido
+. C02F 12 39 43 12
+. C033 56 78 23 82
+                   dummy
+
+  Symbol Table 
+
+  LEDS               1004
+  OBJETIVO           C025
+  CANTIDAD           C000
+  RWM                0000
+  NOSOSVO            C01C
+  VECTOR             C027
+  SWITCHS            1003
+  DIREC              C001
+  DUMMY              C037
+  FIN                C023
+  ROM                C000
+  LOOP               C00D

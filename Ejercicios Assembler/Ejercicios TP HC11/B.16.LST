@@ -1,0 +1,79 @@
+  ADDR B1 B2 B3 B4 E:\Universidad\Arquitectura de Computadoras\     PAGE       1
+
+                   RESET   EQU     $FFFE
+                   RAM     EQU     $0000
+                   ROM     EQU     $C000
+
+
+                           ;Vectore de Reset
+                           ORG     RESET
+                           ORG     RAM
+  0000 C0 00               DW      Main
+
+
+                           ;Comienzo de Codigo
+                           ORG     ROM
+                   Main
+                           ;Cargamos el stack pointer
+  C000 8E 00 FF            LDS     #$00FF
+  C003 4F                  CLRA
+  C004 5F                  CLRB
+  C005 18 CE 00 00         LDY     #0000
+  C009 CE 00 00            LDX     #Vector
+  C00C BD 00 14            JSR     ALIGN4
+  C00F 20 FE       FIN     BRA     FIN
+
+                           ;;Vector de numeros de 16 bits sin signo
+                           ORG     $0000
+  0000 00 00 00 01 Vector  DW  $0000,$0001,$0002,$0003,$0004,$0005,$0006,
+. 0004 00 02 00 03 $0007$0008,$0009,0
+. 0008 00 30 00 05
+. 000C 00 06 00 07
+. 0010 00 09 00 00
+
+
+                   ;;;;;SubRutina  ALIGN4
+                   ;;;;;;Recibe la dir de un vec
+                   ;;;;;;;
+                   ;;;;;;;;el registro IY
+                   ALIGN4
+                           ;;Guardo A y B por que los voy a usar
+  0014 36                  PSHA
+  0015 37                  PSHB
+  0016 18 3C               PSHY
+
+  0018 EC 00               LDD     0,X
+                   LOOP:
+  001A 08                  INX
+  001B 08                  INX
+  001C EC 00               LDD     0,X
+  001E 27 0B               BEQ     FINRUTINA
+  0020 17                  TBA
+  0021 84 03               ANDA    #%00000011 ;podra usar tambien #$01 o #01
+  0023 26 02               BNE     noAli
+  0025 20 F3               BRA     LOOP
+                   noAli
+  0027 18 08               INY
+  0029 20 EF               BRA     LOOP
+
+                   FINRUTINA:
+                           ;;Ahora D tiene la Dir del minimo
+  002B 18 38               PULY
+  002D 33                  PULB
+  002E 32                  PULA
+  002F 39                  RTS
+
+  Symbol Table 
+
+  Symbol Table     E:\Universidad\Arquitectura de Computadoras\     PAGE       2
+
+  RAM                0000
+  NOALI              0027
+  MAIN               C000
+  VECTOR             0000
+  RESET              FFFE
+  FIN                C00F
+  FINRUTINA          002B
+  ALIGN4             0014
+  ROM                C000
+  LOOP               001A

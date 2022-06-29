@@ -1,0 +1,75 @@
+  ADDR B1 B2 B3 B4 E:\Universidad\Arquitectura de Computadoras\     PAGE       1
+
+                   ;;Valores constantes
+                   variableB       EQU 6
+                   variableC       EQU 2
+                   variableD       EQU 3
+                   variableE       EQU 2
+                   variableF       EQU 2
+
+
+                   RAM             EQU     $0000
+                   ROM             EQU     $C000
+
+                                   ORG     RAM
+                   variableA       RMB     2
+
+                                   ORG     ROM
+  C000 7F 00 00                    CLR     variableA
+
+  C003 86 02                       LDAA    #variableF
+  C005 C6 02                       LDAB    #variableE
+  C007 1B                          ABA
+  C008 97 00                       STAA    variableA
+  C00A 86 03                       LDAA    #variableD
+  C00C C6 02                       LDAB    #2
+  C00E 10                          SBA
+  C00F D6 00                       LDAB    variableA
+  C011 3D                          MUL
+  C012 DD 00                       STD     variableA
+  C014 DE 00                       LDX     variableA
+
+  C016 86 06                       LDAA    #variableB
+  C018 C6 06                       LDAB    #variableB
+  C01A 3D                          MUL
+  C01B D7 00                       STAB    variableA
+
+  C01D 86 02                       LDAA    #variableC
+  C01F C6 02                       LDAB    #variableC
+  C021 3D                          MUL
+  C022 86 02                       LDAA    #variableC
+  C024 3D                          MUL
+  C025 96 00                       LDAA    variableA
+  C027 10                          SBA
+  C028 16                          TAB
+  C029 4F                          CLRA
+  C02A 7F 00 00                    CLR     variableA
+  C02D 02                          IDIV
+  C02E 8F                          XGDX
+  C02F DD 00                       STD     variableA
+  C031 20 FE       FIN             BRA     FIN
+
+
+
+
+
+
+
+
+
+
+
+
+  Symbol Table 
+
+  VARIABLEA          0000
+  VARIABLEB          0006
+  VARIABLEC          0002
+  Symbol Table     E:\Universidad\Arquitectura de Computadoras\     PAGE       2
+
+  VARIABLED          0003
+  VARIABLEE          0002
+  VARIABLEF          0002
+  RAM                0000
+  FIN                C031
+  ROM                C000

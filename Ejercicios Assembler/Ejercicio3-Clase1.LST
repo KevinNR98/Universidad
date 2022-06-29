@@ -1,0 +1,48 @@
+  ADDR B1 B2 B3 B4 thrass11.tmp                                     PAGE       1
+
+                   * Ejercicio simple de suma de dos valores de 32 bits
+                   * Los dos valores se encuentran en memoria
+
+                        ORG   $0000
+                   var1 RMB   4
+                   var2 RMB   4
+                   res  RMB   5
+
+                           ORG     $c000
+  C000 7F 00 08            CLR     res
+
+  C003 96 03               LDAA    var1+3
+  C005 9B 07               ADDA    var2+3
+  C007 97 0C               STAA    res+4
+
+  C009 96 02               LDAA    var1+2
+  C00B 99 06               ADCA    var2+2
+  C00D 97 0B               STAA    res+3
+
+  C00F 96 01               LDAA    var1+1
+  C011 99 05               ADCA    var2+1
+  C013 97 0A               STAA    res+2
+
+  C015 96 00               LDAA    var1
+  C017 99 04               ADCA    var2
+  C019 97 09               STAA    res+1
+
+  C01B 24 03               BCC     FIN
+  C01D 7C 00 08            INC     res
+
+  C020 20 FE       FIN     BRA     FIN     *while(1)
+
+                   *  esto no esta bien porque se trata de vector de constantes
+                   * en RWM lo que CONCEPTUALMENTE esta mal
+                   * pero el simulador lo admite, asi que aprovechamos para
+.                  ganar tiempo
+                           ORG     $0000
+  0000 FF FF FF FF         DB      $FF,$FF,$FF,$FF,$00,$00,$00,$01
+. 0004 00 00 00 01
+
+  Symbol Table 
+
+  RES                0008
+  FIN                C020
+  VAR1               0000
+  VAR2               0004

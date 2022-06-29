@@ -1,0 +1,80 @@
+  ADDR B1 B2 B3 B4 E:\Universidad\Arquitectura de Computadoras\     PAGE       1
+
+                   RESET   EQU     $FFFE
+                   RAM     EQU     $0000
+                   ROM     EQU     $C000
+
+                           ;Vector RESET
+                           ORG     RESET
+  FFFE C0 00               DW      Main
+
+                           ORG     RAM
+                   CANTVEC RMB     1
+                           ;Comienzo del Codigo
+                           ORG     ROM
+                   Main:
+                           ;Cargo el Stack Pointer
+  C000 8E 00 FF            LDS     #$00FF
+  C003 4F                  CLRA
+  C004 5F                  CLRB
+  C005 7F 00 00            CLR     CANTVEC
+  C008 CE C0 10            LDX     #vector ;dir de vec en X
+  C00B BD C0 38            JSR     PROMPOS
+
+  C00E 20 FE       FIN     BRA     FIN
+
+                           ;Vector de nros signados
+  C010 00 0A FF EC vector  FDB  10,-20,-30,-128,255,100,-99,2,-60,-56,32,23,-90,
+. C014 FF E2 FF 80 15,-15,9,-34,32,-12,0
+. C018 00 30 00 64
+. C01C FF 9D 00 02
+. C020 FF C4 FF 66
+. C024 00 20 00 17
+. C028 FF A6 00 0F
+. C02C FF 20 00 09
+. C030 FF DE 00 20
+. C034 FF F4 00 00
+
+
+                   ;;;;Subrituna PROMPOS
+                   ;;;;;Recive la dir de vec en IX
+                   ;;;;;;Devuelve la cant de nros negativos
+                   PROMPOS:
+                           ;;Guardo los valosres de A por si lo modifico
+                           ;;Para poder devolverlos
+  C038 36                  PSHA
+  C039 18 3C               PSHY
+
+  C03B 1A EE 00    loop    LDY     0,X
+  C03E 27 10               BEQ     finVec
+  C040 2B 02               BMI     Neg
+  C042 E3 00               ADDD    0,X     ; sumamos los valores positivos
+  C044 08          Neg     INX
+  C045 08                  INX
+  C046 18 DE 00            LDY     CANTVEC
+  C049 18 08               INY             ;cuenta la cant del vec
+  C04B 18 DF 00            STY     CANTVEC
+  C04E 26 EB               BNE     loop    ;termina si es el fin del vec
+                   finVec
+  C050 DE 00               LDX     CANTVEC
+  C052 02                  IDIV
+  C053 8F                  XGDX
+
+  C054 18 38               PULY
+  C056 39                  RTS
+
+  Symbol Table 
+
+  Symbol Table     E:\Universidad\Arquitectura de Computadoras\     PAGE       2
+
+  NEG                C044
+  RAM                0000
+  MAIN               C000
+  VECTOR             C010
+  RESET              FFFE
+  CANTVEC            0000
+  PROMPOS            C038
+  FIN                C00E
+  ROM                C000
+  LOOP               C03B
+  FINVEC             C050

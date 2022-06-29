@@ -1,0 +1,54 @@
+  ADDR B1 B2 B3 B4 E:\Universidad\Arquitectura de Computadoras\     PAGE       1
+
+                   *recorro un vector de elementos de 16 bits
+                   *y cuento las ocurrencias de un valor objetivo
+                   *ademas guardo la direccion de la primer ocurrencia
+
+                   RWM             EQU     0
+                   ROM             EQU     $C000
+
+
+                                   ORG     RWM
+  0000 99 99 12 34 vector          DW      $9999,$1234,$4444,$90,$1234,$4312,
+. 0004 44 44 00 90 $5678,9090    *esto en RWM no tiene sentido
+. 0008 12 39 43 12
+. 000C 56 78 23 82
+                   cantidad        RMB     1
+  0011 12 34       objetivo        FDB     $1234           *esto en RWM no tiene
+.                  sentido
+                   direc           RMB     2
+
+                                   ORG     ROM
+  C000 7F 00 10                    CLR     cantidad
+  C003 18 CE 00 01                 LDY     #1
+  C007 CE 00 00                    LDX     #vector
+  C00A DC 11                       LDD     objetivo
+  C00C 1A A3 00    loop            CPD     0,x
+  C00F 26 09                       BNE     noSosVo
+  C011 7C 00 10                    INC     cantidad
+
+  C014 18 09                       DEY
+  C016 26 02                       BNE     noSosVo
+  C018 DF 13                       STX     direc           ;no admite modo
+.                  inmediato
+
+                   noSosVo
+  C01A 08                          INX
+  C01B 08                          INX                     ;incremento dos veces
+.                  por que estamos en 16 bits
+  C01C 8C 00 10                    CPX     #cantidad       ;aprovecho que tengo
+.                  una reserva a cont. del vector
+  C01F 25 EB                       BLO     loop
+  C021 20 FE       fin             BRA     fin
+
+  Symbol Table 
+
+  OBJETIVO           0011
+  CANTIDAD           0010
+  RWM                0000
+  NOSOSVO            C01A
+  VECTOR             0000
+  DIREC              0013
+  FIN                C021
+  ROM                C000
+  LOOP               C00C

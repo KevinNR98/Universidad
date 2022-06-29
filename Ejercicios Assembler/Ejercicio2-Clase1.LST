@@ -1,0 +1,35 @@
+  ADDR B1 B2 B3 B4 E:\Universidad\Arquitectura de Computadoras\     PAGE       1
+
+                   * Ejercicio simple de suma de dos valores de 16 bits
+                   * Los dos valores se encuentran en memoria
+
+                           ORG     $0000
+                   * todo lo que vaya aca va a estar a partir de la dir 0000
+                   res  RMB   3            *0000,0001,0002
+                   var1 RMB   2            *0003,0004
+                   var2 RMB   2            *0005,0006
+
+                           ORG     $c000
+  C000 7F 00 00            CLR     res     *solo limpia 0000(primer byte)
+
+  C003 DC 03               LDD     var1
+  C005 D3 05               ADDD    var2
+  C007 24 03               BCC     noCarry
+  C009 7C 00 00            INC     res
+                   noCarry
+  C00C DD 01               STD     res+1
+  C00E 20 FE       FIN     BRA     FIN
+                   *  esto no esta bien porque se trata de vector de constantes
+                   * en RWM lo que CONCEPTUALMENTE esta mal
+                   * pero el simulador lo admite, asi que aprovechamos para
+.                  ganar tiempo
+                           ORG     $0003
+  0003 FF FF 00 01         FDB     $FFFF,$0001
+
+  Symbol Table 
+
+  NOCARRY            C00C
+  RES                0000
+  FIN                C00E
+  VAR1               0003
+  VAR2               0005

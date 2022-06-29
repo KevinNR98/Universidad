@@ -1,0 +1,29 @@
+  ADDR B1 B2 B3 B4 E:\Universidad\Arquitectura de Computadoras\     PAGE       1
+
+                   * Ejercicio simple de suma de dos valores de 8 bits
+                   * Los dos valores se encuentran en memoria
+
+                           ORG     $0000
+                   * todo lo que vaya aca va a estar a partir de la dir 0000
+                   res  RMB   2            *Ocupara la direccion 0000 H y 0001 L
+                   var1 RMB   1            *0002
+                   var2 RMB   1            *0003
+
+                           ORG     $c000
+  C000 7F 00 00            CLR     res
+  C003 96 02               LDAA    var1
+  C005 D6 03               LDAB    var2
+  C007 1B                  ABA
+  C008 24 03               BCC     noCarry
+  C00A 7C 00 00            INC     res
+                   noCarry
+  C00D 97 01               STAA    res+1
+  C00F 20 FE       FIN     BRA     FIN
+
+  Symbol Table 
+
+  NOCARRY            C00D
+  RES                0000
+  FIN                C00F
+  VAR1               0002
+  VAR2               0003
