@@ -31,13 +31,11 @@ C24IMPBE
 		PSHA
 		PSHB
 
-LOOP		LDAA	2,X
-		ASRA	
+		LDAA	0,X
+LOOP		ASRA	
 		BCC	noCarry
 		INY
 noCarry
-		INX
-		INX
 		INX
 		LDAA	0,X
 		BEQ	FINRUTINA	

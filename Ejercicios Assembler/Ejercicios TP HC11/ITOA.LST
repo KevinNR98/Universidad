@@ -1,0 +1,50 @@
+  ADDR B1 B2 B3 B4 E:\Universidad\Arquitectura de Computadoras\     PAGE       1
+
+                   ;;;ITOA:se utiliza para convertir un valor numrico en una
+.                  cadena de texto
+                                           ORG     $0000
+  0000 F5                                  db      $F5
+
+
+                                           ORG     $c000
+                   inicio
+
+  C000 96 00                               ldaa    $00
+  C002 44                                  lsra
+  C003 44                                  lsra
+  C004 44                                  lsra
+  C005 44                                  lsra
+  C006 81 09                               cmpa    #$9
+  C008 23 02                               bls     esnumero_h
+  C00A 8B 07                               adda    #$07
+                   esnumero_h
+  C00C 8B 30                               adda    #$30
+  C00E 97 01                               staa    $01
+
+  C010 96 00                               ldaa    $00
+  C012 84 0F                               anda    #$0f
+  C014 81 09                               cmpa    #$9
+  C016 23 02                               bls     esnumero_l
+  C018 8B 07                               adda    #7
+                   esnumero_l
+  C01A 8B 30                               adda    #$30
+  C01C 97 02                               staa    $02
+
+
+
+
+
+
+
+
+  C01E 20 FE       fin                     bra     fin
+
+                                           ORG     $fffe
+  FFFE C0 00                               dw      inicio
+
+  Symbol Table 
+
+  ESNUMERO_H         C00C
+  ESNUMERO_L         C01A
+  FIN                C01E
+  INICIO             C000

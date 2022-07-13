@@ -1,0 +1,54 @@
+  ADDR B1 B2 B3 B4 thrass11.tmp                                     PAGE       1
+
+                   ;;;ATOI : convierte una cadena de caracteres a una variable
+.                  entera
+                                           ORG     $0000
+  0000 65 46                               db      'e,'F
+
+
+                                           ORG     $c000
+                   inicio
+  C000 96 00                               ldaa    $00
+  C002 81 39                               cmpa    #'9
+  C004 22 04                               bhi     esletrah
+  C006 80 30                               suba    #$30
+  C008 20 04                               bra     storeh
+                   esletrah
+  C00A 84 DF                               anda    #%11011111
+  C00C 80 37                               suba  #$37
+                   storeh
+  C00E 16                                  tab ; transfiero REG a _>> Reg B
+
+  C00F 58                                  lslb
+  C010 58                                  lslb
+  C011 58                                  lslb
+  C012 58                                  lslb
+
+  C013 96 01                               ldaa    $01
+  C015 81 39                               cmpa    #'9
+  C017 22 04                               bhi     esletral
+  C019 80 30                               suba    #$30
+  C01B 20 04                               bra     storel
+                   esletral
+  C01D 84 DF                               anda    #%11011111
+  C01F 80 37                               suba    #$37
+                   storel
+  C021 1B                                  aba
+  C022 97 02                               staa    $02
+
+  C024 20 FE       fin                     bra     fin
+
+
+
+
+                                           ORG     $fffe
+  FFFE C0 00                               dw      inicio
+
+  Symbol Table 
+
+  STOREH             C00E
+  STOREL             C021
+  ESLETRAH           C00A
+  ESLETRAL           C01D
+  FIN                C024
+  INICIO             C000

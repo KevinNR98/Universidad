@@ -1,0 +1,51 @@
+  ADDR B1 B2 B3 B4 thrass11.tmp                                     PAGE       1
+
+                   RESET   EQU     $FFFE
+                   RWM     EQU     $0000
+                   ROM     EQU     $C000
+
+
+                           ORG     RESET
+                           ORG     RWM
+  0000 C0 00               DW      MAIN
+
+                           ORG     ROM
+
+                   MAIN:
+  C000 CE 00 00            LDX     #VECTOR
+  C003 EC 00               LDD     0,X
+  C005 27 0E               BEQ     LEO0
+  C007 1A 83 00 5A         CPD     #'Z
+  C00B 22 06               BHI     NOESMAY
+  C00D 1A 83 00 41         CPD     #'A
+  C011 24 02               BHS     ESMAY
+
+
+  C013 CA DF       NOESMAY ORAB    #%11011111
+
+                   ESMAY
+                   LEO0
+  C015 20 FE       FIN     BRA     FIN
+
+
+
+
+
+
+
+
+                           ORG     RWM
+  0000 00 61 00 42 VECTOR  DW      'a,'B,'c,0
+. 0004 00 63 00 00
+
+  Symbol Table 
+
+  ESMAY              C015
+  RWM                0000
+  MAIN               C000
+  VECTOR             0000
+  RESET              FFFE
+  NOESMAY            C013
+  LEO0               C015
+  FIN                C015
+  ROM                C000

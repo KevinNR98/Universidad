@@ -1,0 +1,106 @@
+  ADDR B1 B2 B3 B4 thrass11.tmp                                     PAGE       1
+
+                   ROM             EQU     $C000
+                   RAM             EQU     $0000
+
+                   TAM             EQU     32
+                   TAMCONT         EQU     2
+                   TAMPAL          EQU     2       YA QUE LAS PALABRAS SON DE 16
+.                  BITS
+
+                                   ORG     RAM
+                   VECTORX         RMB     TAM
+                   CONTAPOS        RMB     TAMCONT
+                   PUNTX           RMB     TAMCONT
+
+                           ORG     ROM
+
+  C000 8E 00 FF            LDS     #$00FF
+  C003 CE 00 00            LDX     #VECTORX
+  C006 DF 22               STX     PUNTX
+  C008 7F 00 20            CLR     CONTAPOS
+  C00B 7F 00 21            CLR     CONTAPOS+1
+
+  C00E 4F                  CLRA
+  C00F 5F                  CLRB
+
+                   MAIN
+  C010 BD C0 15            JSR    C24IMPBE
+  C013 20 FE       FIN     BRA     FIN
+
+                   C24IMPBE
+                   SIGUE
+  C015 EC 00               LDD     0,X
+  C017 27 20               BEQ     LEE01TRAVEZ             SALTA SI ES 0
+                   CONTINUA
+
+  C019 4F                  CLRA
+  C01A E6 02               LDAB    2,X
+  C01C 27 06               BEQ     ESCERONODIVIDE          SALTO PARA NO DIVIDIR
+.                  POR 0 (YA QUE NO SE PUEDE)
+  C01E CE 00 02            LDX     #2                      PARA SABER SI ES
+.                  IMPAR O NO
+  C021 02                  IDIV
+  C022 26 09               BNE     IMPAR
+                   ESCERONODIVIDE
+  C024 DE 22               LDX     PUNTX
+  C026 08                  INX
+  C027 08                  INX
+  C028 08                  INX
+  C029 DF 22               STX     PUNTX
+  C02B 20 E8               BRA     SIGUE
+
+
+                   IMPAR
+  C02D 7C 00 21            INC     CONTAPOS+1
+  C030 DE 22               LDX     PUNTX
+  C032 08                  INX
+  C033 08                  INX
+  C034 08                  INX
+  C035 DF 22               STX     PUNTX
+  C037 20 DC               BRA     SIGUE
+
+
+                   LEE01TRAVEZ
+  C039 A6 02               LDAA    2,X                     LEO LA PARTE QUE ME
+.                  QUEDO SOLA DE LAS TRES PARTES DEL NUMERO
+  C03B 27 02               BEQ     LEE0REAL
+  ADDR B1 B2 B3 B4 thrass11.tmp                                     PAGE       2
+
+  C03D 20 DA               BRA     CONTINUA
+
+                   LEE0REAL
+  C03F 18 DE 20            LDY     CONTAPOS
+  C042 39                  RTS
+
+                           ORG     VECTORX
+
+  0000 00 01 00 02         DW      1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,0
+. 0004 00 03 00 04
+. 0008 00 30 00 06
+. 000C 00 07 00 08
+. 0010 00 09 00 30
+. 0014 00 0B 00 0C
+. 0018 00 0D 00 0E
+. 001C 00 30 00 00
+
+
+  Symbol Table 
+
+  TAMCONT            0002
+  VECTORX            0000
+  RAM                0000
+  LEE0REAL           C03F
+  LEE01TRAVEZ        C039
+  IMPAR              C02D
+  CONTAPOS           0020
+  MAIN               C010
+  ESCERONODIVIDE     C024
+  PUNTX              0022
+  FIN                C013
+  TAM                0020
+  CONTINUA           C019
+  SIGUE              C015
+  TAMPAL             0002
+  ROM                C000
+  C24IMPBE           C015

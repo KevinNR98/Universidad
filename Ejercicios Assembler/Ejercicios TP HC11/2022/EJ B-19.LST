@@ -1,0 +1,79 @@
+  ADDR B1 B2 B3 B4 E:\Universidad\Arquitectura de Computadoras\     PAGE       1
+
+                   ROM             EQU     $C000
+                   RAM             EQU     $B600
+
+                   TAM             EQU     32
+                   TAMCONT         EQU     2
+
+                                   ORG     RAM
+
+                   VECTORX         RMB     TAM
+                   CONTADOR        RMB     TAMCONT
+
+                                   ORG     ROM
+
+                                   ;LDS    #$00FF
+  C000 CE B6 00                    LDX     #VECTORX
+  C003 7F B6 20                    CLR     CONTADOR
+  C006 7F B6 21                    CLR     CONTADOR+1
+  C009 4F                          CLRA
+  C00A 5F                          CLRB
+
+                   MAIN
+
+                   LOOP
+  C00B A6 00               LDAA    0,X     CARGO EL ACUMULADOR A CON LA PRIMERA
+.                  POSICION DEL VECTOR Y SIEMPRE APUNTA A X YA QUE LO VOY
+.                  INCREMENTANDO
+  C00D 27 14               BEQ     LEE0    SI LEE EL VALOR 00 ES NULL ENTONCES
+.                  TERMINA
+
+  C00F 81 39               CMPA    #'9     COMPARE EL ACUMULADOR A CON Z EN
+.                  ASCII
+  C011 22 0D               BHI     NOERA   SI ES MAYOR QUE Z NO VA A ESTAR
+.                  COMPRENDIDO ENTRE 1 Y 9, SALTA SI ES MAYOR
+  C013 81 31               CMPA    #'1     COMPARE EL ACUMULADOR A CON 0 EN
+.                  ASCII
+  C015 24 03               BHS     ESNUM   SALTA SI ES MAYOR O IGUAL QUE 0
+  C017 08                  INX
+  C018 20 F1               BRA     LOOP
+
+                   ESNUM
+
+  C01A 7C B6 21            INC     CONTADOR+1
+  C01D 08                  INX
+  C01E 20 EB               BRA     LOOP
+
+                   NOERA
+  C020 08                  INX
+  C021 20 E8               BRA     LOOP
+                   LEE0
+  C023 18 FE B6 20         LDY     CONTADOR
+  C027 20 FE       FIN     BRA     FIN
+
+
+                       ORG     VECTORX
+
+  B600 52 49 62 65         DB      'R,'I,'b,'e,'r,'s,'o,'s','d','e,'l,'a,'B
+. B604 72 73 6F 73
+. B608 64 34 6C 61
+. B60C 42
+  B60D 31 32 00            DB      '1,'2,0
+
+  Symbol Table 
+
+  TAMCONT            0002
+  VECTORX            B600
+  Symbol Table     E:\Universidad\Arquitectura de Computadoras\     PAGE       2
+
+  LEE0               C023
+  RAM                B600
+  MAIN               C00B
+  ESNUM              C01A
+  CONTADOR           B620
+  FIN                C027
+  TAM                0020
+  NOERA              C020
+  ROM                C000
+  LOOP               C00B

@@ -1,0 +1,63 @@
+  ADDR B1 B2 B3 B4 thrass11.tmp                                     PAGE       1
+
+                   RESET   EQU     $FFFE
+                   RWM     EQU     $0000
+                   ROM     EQU     $C000
+
+                           ORG     RESET
+                           ORG     RWM
+  0000 C0 00               DW      MAIN
+
+                           ORG     ROM
+                   MAIN
+  C000 8E 00 FF            LDS     #$00FF
+  C003 BD C0 08            JSR     PARIMPAR
+  C006 20 FE       FIN     BRA     FIN
+
+
+
+
+
+                   PARIMPAR:
+
+  C008 36                  PSHA
+  C009 37                  PSHB
+  C00A CE 00 00            LDX     #VECTOR
+  C00D 18 CE 00 00         LDY     #0
+
+  C011 EC 00       LOOP    LDD     0,X
+  C013 27 0D               BEQ     LEE0
+  C015 04                  LSRD
+  C016 25 04               BCS     IMPAR
+  C018 08                  INX
+  C019 08                  INX
+  C01A 20 F5               BRA     LOOP
+
+  C01C 18 08       IMPAR   INY
+  C01E 08                  INX
+  C01F 08                  INX
+  C020 20 EF               BRA     LOOP
+
+  C022 33          LEE0    PULB
+  C023 32                  PULA
+  C024 39                  RTS
+
+                           ORG     RWM
+  0000 00 01 00 02 VECTOR  DW      1,2,3,4,5,6,7,8,9,0
+. 0004 00 03 00 04
+. 0008 00 30 00 06
+. 000C 00 07 00 08
+. 0010 00 09 00 00
+
+  Symbol Table 
+
+  LEE0               C022
+  RWM                0000
+  IMPAR              C01C
+  MAIN               C000
+  VECTOR             0000
+  RESET              FFFE
+  FIN                C006
+  PARIMPAR           C008
+  ROM                C000
+  LOOP               C011

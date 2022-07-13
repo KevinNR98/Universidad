@@ -1,5 +1,10 @@
   ADDR B1 B2 B3 B4 E:\Universidad\Arquitectura de Computadoras\     PAGE       1
 
+                   *b.17
+                   *IX recibe la direccin vector, termina en 0
+                   *retorna en el registro IY la cantidad de elementos impares
+
+
                    RESET   EQU     $FFFE
                    RAM     EQU     $0000
                    ROM     EQU     $C000
@@ -31,20 +36,18 @@
   C01C 36                          PSHA
   C01D 37                          PSHB
 
-  C01E A6 02       LOOP            LDAA    2,X
-  C020 47                          ASRA
+  C01E A6 00                       LDAA    0,X
+  C020 47          LOOP            ASRA
   C021 24 02                       BCC     noCarry
   C023 18 08                       INY
                    noCarry
   C025 08                          INX
-  C026 08                          INX
-  C027 08                          INX
-  C028 A6 00                       LDAA    0,X
-  C02A 27 02                       BEQ     FINRUTINA
-  C02C 20 F0                       BRA     LOOP
+  C026 A6 00                       LDAA    0,X
+  C028 27 02                       BEQ     FINRUTINA
+  C02A 20 F4                       BRA     LOOP
 
-  C02E 32          FINRUTINA       PULA
-  C02F 39                          RTS
+  C02C 32          FINRUTINA       PULA
+  C02D 39                          RTS
 
   Symbol Table 
 
@@ -54,7 +57,7 @@
   VECTOR             C00F
   RESET              FFFE
   FIN                C00D
-  FINRUTINA          C02E
+  FINRUTINA          C02C
   ROM                C000
-  LOOP               C01E
+  LOOP               C020
   C24IMPBE           C01C

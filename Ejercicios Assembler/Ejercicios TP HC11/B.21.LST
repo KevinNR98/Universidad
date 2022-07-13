@@ -23,7 +23,7 @@
   C00C BD C0 15            JSR     ITOAU32BE
   C00F 20 FE       FIN     BRA     FIN
 
-                           ;;Vector de numeros de 32 bits sin signo
+                           ;;Vector de numeros de 16 bits sin signo
   C011 12 34 56 78 Vector  DW  $1234,$5678
 
 

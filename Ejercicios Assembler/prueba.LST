@@ -1,0 +1,20 @@
+  ADDR B1 B2 B3 B4 thrass11.tmp                                     PAGE       1
+
+                                           ORG     $0000
+  0000 F5                                  db      $F5
+                   ;ITOA
+
+
+                                           ORG     $c000
+                   inicio
+
+  C000 86 0A                               ldaa    #10
+  C002 47                                  ASRA
+
+
+  C003 20 FE       FIN                     BRA     FIN
+
+  Symbol Table 
+
+  FIN                C003
+  INICIO             C000

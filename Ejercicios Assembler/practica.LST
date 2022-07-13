@@ -1,0 +1,72 @@
+  ADDR B1 B2 B3 B4 thrass11.tmp                                     PAGE       1
+
+                   RESET   EQU     $FFFE
+                   RAM     EQU     $0000
+                   ROM     EQU     $C000
+
+
+                           ORG     RESET
+                           ORG     RAM
+  0000 C0 00               DW      MAIN
+
+                           ORG     ROM
+                   MAIN
+  C000 8E 00 FF            LDS     #$00FF
+  C003 BD 00 29            JSR     CANTMIN
+  C006 20 FE       FIN     BRA     FIN
+
+                           ORG     RAM
+                   NUMSNEG RMB     1
+  0001 00 0A FF EC VECTOR  DW      10,-20,-30,-30000,5000,31000,-32000,2,-31001,
+. 0005 FF E2 8A D0 -32768,32767,23,-99,150,-15,9999,-3434,32,-12,20
+. 0009 13 30 79 18
+. 000D 83 00 00 02
+. 0011 86 E7 80 66
+. 0015 7F FF 00 17
+. 0019 FF 9D 00 96
+. 001D FF 20 27 0F
+. 0021 F2 96 00 20
+. 0025 FF F4 00 14
+
+                   CANTMIN:
+  0029 36                  PSHA
+  002A 37                  PSHB
+  002B 3C                  PSHX
+
+  002C CE 00 01            LDX     #VECTOR
+  002F 18 CE 00 00         LDY     #0
+  0033 C6 14               LDAB    #20
+  0035 D7 00               STAB    NUMSNEG
+
+
+  0037 EC 00       LOOP    LDD     0,X
+  0039 2A 02               BPL     NOESNEG
+  003B 18 08               INY
+
+                   NOESNEG
+  003D 08                  INX
+  003E 08                  INX
+  003F D6 00               LDAB    NUMSNEG
+  0041 5A                  DECB
+  0042 D7 00               STAB    NUMSNEG
+  0044 26 F1               BNE     LOOP
+
+  0046 38                  PULX
+  0047 33                  PULB
+  0048 32                  PULA
+  0049 39                  RTS
+
+  Symbol Table 
+
+  CANTMIN            0029
+  RAM                0000
+  NOESNEG            003D
+  NUMSNEG            0000
+  MAIN               C000
+  VECTOR             0001
+  RESET              FFFE
+  Symbol Table     thrass11.tmp                                     PAGE       2
+
+  FIN                C006
+  ROM                C000
+  LOOP               0037

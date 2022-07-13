@@ -1,0 +1,48 @@
+  ADDR B1 B2 B3 B4 thrass11.tmp                                     PAGE       1
+
+                   *B.06
+                   *XI recibe la direccion de un vector, termina en 0.
+                   *retorna la cantidad de numeros negativos.
+
+
+                   RESET   EQU     $FFFE
+                   RAM     EQU     $0000
+                   ROM     EQU     $C000
+
+                           ORG     RESET
+                           ORG     RAM
+  0000 C0 00               DW      MAIN
+
+                           ORG     ROM
+                   MAIN
+  C000 8E 00 FF            LDS     #$00FF
+  C003 CE C0 0D            LDX     #VECTOR
+  C006 C6 00               LDAB    #0
+  C008 BD C0 14            JSR     CANTNEGA
+  C00B 20 FE       FIN     BRA     FIN
+
+  C00D FF FE 03 05 VECTOR DB       -1,-2,3,5,-18,4,0
+. C011 EE 04 00
+
+                   CANTNEGA:
+
+  C014 A6 00               LDAA    0,X
+  C016 2A 01       LOOP    BPL     NOESNEG
+  C018 5C                  INCB
+                   NOESNEG
+  C019 08                  INX
+  C01A A6 00               LDAA    0,X
+  C01C 26 F8               BNE     LOOP
+  C01E 39                  RTS
+
+  Symbol Table 
+
+  RAM                0000
+  NOESNEG            C019
+  MAIN               C000
+  VECTOR             C00D
+  CANTNEGA           C014
+  RESET              FFFE
+  FIN                C00B
+  ROM                C000
+  LOOP               C016
